@@ -1,0 +1,125 @@
+<header class="headerContainer">
+  <nav class="nav">
+    <a class="textLogo" href="#home"><span class="colorBra">{"{"}</span> HA <span class="colorBra">{"}"}</span></a>
+    <a class="navToggle" id="navToogle" aria-label="open menu">
+      <i class="fa-solid fa-bars"></i>
+    </a>
+    <div class="menu" id="menu">
+      <a class="btnNavbar" href="#about" id="linkAbout"> About</a>
+      <a class="btnNavbar" href="#skills" id="linkSkills"> Skills</a>
+      <a class="btnNavbar" href="#"> Project</a>
+      <a class="btnNavbar" href="#"> Contact</a>
+    </div>
+  </nav>
+</header>
+<style>
+  .fa-bars {
+    color: var(--color-primary);
+    font-size: 30px;
+    padding: 0 10px 0 10px;
+    transition: all 0.3s linear;
+  }
+  .fa-bars:hover {
+    color: var(--color-secondary);
+    transition: all 0.3s linear;
+  }
+  .headerContainer {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 32px 10px 26px;
+    font-weight: 600;
+    background-color: var(--color-bg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .textLogo {
+    font-family: Teko, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .colorBra {
+    color: var(--color-primary);
+  }
+  .navToggle {
+    display: none;
+    cursor: pointer;
+  }
+  .textLogo:hover {
+    color: var(--color-secondary);
+    transition: all 0.2s linear;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-bg);
+  }
+  .btnNavbar {
+    margin-left: 20px;
+    border-left: 2px solid var(--color-primary);
+    padding-left: 8px;
+  }
+  .btnNavbar:hover {
+    margin-left: 20px;
+    color: var(--color-secondary);
+    transition: all 0.3s linear;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      position: fixed;
+      align-items: center;
+      left: 100%;
+      top: 63px;
+      width: 100%;
+      height: calc(100% - 63px);
+      padding-top: 60px;
+      transition: left 0.3s;
+      font-size: 40px;
+    }
+    .btnNavbar {
+      padding: 20px;
+      border: none;
+      margin: 0;
+    }
+    .btnNavbar:hover {
+      margin: 0px;
+    }
+    .navToggle {
+      display: block;
+    }
+    .menuOn {
+      left: 0;
+    }
+    .menuOff {
+      left: 100%;
+    }
+  }
+</style>
+<script>
+  const navToggle = document.querySelector("#navToogle");
+  const navMenu = document.querySelector("#menu");
+  const linkAbout = document.querySelector("#linkAbout");
+  const linkSkills = document.querySelector("#linkSkills");
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("menuOn");
+    navMenu.classList.contains("menuOn")
+      ? navToggle.setAttribute("arial-label", "close menu")
+      : navToggle.setAttribute("arial-label", "open menu");
+  });
+
+  linkAbout.addEventListener("click", () => {
+    navMenu.classList.toggle("menuOn");
+  });
+  linkSkills.addEventListener("click", () => {
+    navMenu.classList.toggle("menuOn");
+  });
+</script>

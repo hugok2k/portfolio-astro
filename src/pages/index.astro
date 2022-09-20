@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import styles from "../stylesheet/home.module.css";
+import Header from "../components/Header.astro";
+// import Card from "../components/Card.astro";
+---
+
+<Layout title="Hugo Avila">
+  <Header />
+  <main class={styles.sectionContainer}>
+    <picture>
+      <img
+        class={styles.imgAvatar}
+        src="https://res.cloudinary.com/hugok2k/image/upload/c_scale,w_200/v1661134228/IMG_20220105_110054726_HDR_qejxvm.jpg"
+        alt="avatar"
+      />
+    </picture>
+    <span class={styles.titleName}>Hola. Soy Hugo</span>
+    <span class={styles.textDev}>Full-stack Developer, un apasionado de la tecnología y la programación.</span>
+    <div class={styles.socialContainer}>
+      <a class={styles.circleSocial} href="https://github.com/hugok2k" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a class={styles.circleSocial} href="https://www.linkedin.com/in/devhugoavila/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+    <a
+      class={styles.button}
+      href="https://github.com/hugok2k/portfolio/raw/main/documents/CV-HugoAvila.pdf"
+      download="CV-HugoAvila.pdf">Descarga mi CV</a
+    >
+    <!-- <ul role="list" class="link-card-grid">
+      <Card
+        href="https://docs.astro.build/"
+        title="Documentation"
+        body="Learn how Astro works and explore the official API docs."
+      />
+    </ul> -->
+  </main>
+</Layout>
+
+<style>
+  .fa-github,
+  .fa-linkedin {
+    color: var(--color-primary);
+    font-size: 30px;
+    padding: 0 10px 0 10px;
+    transition: all 0.3s linear;
+  }
+  .fa-linkedin:hover,
+  .fa-github:hover {
+    color: var(--color-secondary);
+    transition: all 0.3s linear;
+  }
+</style>
