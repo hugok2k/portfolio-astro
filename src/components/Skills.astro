@@ -1,0 +1,64 @@
+---
+import Astrosvg from './svg/astrosvg.astro'
+import Postgres from './svg/postgres.astro'
+---
+
+<span class="subtitle" id="skills">Skills</span>
+<div class="iconContainer">
+  <div class="skillIconContainer">
+    <i class="fa-brands fa-square-js"></i>
+    <span>JavaScript</span>
+  </div>
+  <div class="skillIconContainer">
+    <i class="fa-brands fa-react"></i>
+    <span>ReactJS</span>
+  </div>
+  <div class="skillIconContainer">
+    <Astrosvg />
+    <span>Astro</span>
+  </div>
+  <div class="skillIconContainer">
+    <Postgres />
+    <span>PostgreSQL</span>
+  </div>
+  <div class="skillIconContainer">
+    <i class="fa-brands fa-html5"></i>
+    <span>HTML5</span>
+  </div>
+  <div class="skillIconContainer">
+    <i class="fa-brands fa-css3-alt"></i>
+    <span>CSS3</span>
+  </div>
+</div>
+<style>
+  .iconContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .skillIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    text-align: center;
+  }
+  .fa-square-js {
+    font-size: 80px;
+    color: hsl(52, 84%, 63%);
+  }
+  .fa-react {
+    font-size: 80px;
+    color: #00d8ff;
+  }
+  .fa-html5 {
+    font-size: 80px;
+    color: #dd4b25;
+  }
+  .fa-css3-alt {
+    font-size: 80px;
+    color: #33a8dd;
+  }
+</style>

@@ -1,14 +1,14 @@
 <header class="headerContainer">
   <nav class="nav">
-    <a class="textLogo" href="#"><span class="colorBra">{"{"}</span> HA <span class="colorBra">{"}"}</span></a>
+    <a class="textLogo" href="#"><span class="colorBra">{'{'}</span> HA <span class="colorBra">{'}'}</span></a>
     <a class="navToggle" id="navToogle" aria-label="open menu">
       <i class="fa-solid fa-bars"></i>
     </a>
     <div class="menu" id="menu">
       <a class="btnNavbar" href="#about" id="linkAbout"> About</a>
       <a class="btnNavbar" href="#skills" id="linkSkills"> Skills</a>
-      <a class="btnNavbar" href="#"> Project</a>
-      <a class="btnNavbar" href="#"> Contact</a>
+      <a class="btnNavbar" href="#project" id="linkProject"> Project</a>
+      <a class="btnNavbar" href="#contact" id="linkContact"> Contact</a>
     </div>
   </nav>
 </header>
@@ -105,21 +105,29 @@
   }
 </style>
 <script>
-  const navToggle = document.querySelector("#navToogle");
-  const navMenu = document.querySelector("#menu");
-  const linkAbout = document.querySelector("#linkAbout");
-  const linkSkills = document.querySelector("#linkSkills");
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("menuOn");
-    navMenu.classList.contains("menuOn")
-      ? navToggle.setAttribute("arial-label", "close menu")
-      : navToggle.setAttribute("arial-label", "open menu");
-  });
+  const navToggle = document.querySelector('#navToogle')
+  const navMenu = document.querySelector('#menu')
+  const linkAbout = document.querySelector('#linkAbout')
+  const linkSkills = document.querySelector('#linkSkills')
+  const linkProject = document.querySelector('#linkProject')
+  const linkContact = document.querySelector('#linkContact')
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('menuOn')
+    navMenu.classList.contains('menuOn')
+      ? navToggle.setAttribute('arial-label', 'close menu')
+      : navToggle.setAttribute('arial-label', 'open menu')
+  })
 
-  linkAbout.addEventListener("click", () => {
-    navMenu.classList.toggle("menuOn");
-  });
-  linkSkills.addEventListener("click", () => {
-    navMenu.classList.toggle("menuOn");
-  });
+  linkAbout.addEventListener('click', () => {
+    navMenu.classList.toggle('menuOn')
+  })
+  linkProject.addEventListener('click', () => {
+    navMenu.classList.toggle('menuOn')
+  })
+  linkSkills.addEventListener('click', () => {
+    navMenu.classList.toggle('menuOn')
+  })
+  linkContact.addEventListener('click', () => {
+    navMenu.classList.toggle('menuOn')
+  })
 </script>
