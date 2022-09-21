@@ -11,7 +11,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/ha.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -30,13 +30,12 @@ const { title } = Astro.props;
         --color-secondary: hsl(84, 100%, 59%);
         --color-bg: hsl(0, 0%, 11%);
       }
-
       html {
         font-family: "Nunito Sans", sans-serif;
         color: var(--color-text-base);
         background-color: var(--color-bg);
+        scroll-behavior: smooth;
       }
-
       body {
         margin: 0;
       }
