@@ -1,8 +1,12 @@
+---
+import Menu from './svg/menu.astro'
+---
+
 <header class="headerContainer">
   <nav class="nav">
     <a class="textLogo" href="#"><span class="colorBra">{'{'}</span> HA <span class="colorBra">{'}'}</span></a>
     <a class="navToggle" id="navToogle" aria-label="open menu">
-      <i class="fa-solid fa-bars"></i>
+      <Menu />
     </a>
     <div class="menu" id="menu">
       <a class="btnNavbar" href="#project" id="linkProject"> Project</a>
@@ -51,6 +55,10 @@
   .navToggle {
     display: none;
     cursor: pointer;
+    fill: var(--color-primary);
+  }
+  .navToggle:hover {
+    fill: #fff;
   }
   .textLogo:hover {
     color: var(--color-secondary);
