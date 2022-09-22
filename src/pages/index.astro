@@ -5,13 +5,15 @@ import Header from '../components/Header.astro'
 import About from '../components/About.astro'
 import Project from '../components/Project.astro'
 import Skills from '../components/Skills.astro'
+import Github from '../components/svg/github.astro'
+import Linkedin from '../components/svg/linkedin.astro'
 import '../stylesheet/global.css'
 ---
 
 <Layout title="Hugo Avila">
   <main class="main-container">
     <Header />
-    <section class={styles.sectionContainer}>
+    <article class={styles.sectionContainer}>
       <picture>
         <img
           class={styles.imgAvatar}
@@ -20,13 +22,13 @@ import '../stylesheet/global.css'
         />
       </picture>
       <span class={styles.titleName}>Hola. Soy Hugo</span>
-      <span class={styles.textDev}>Full-stack Developer, un apasionado de la tecnología y la programación.</span>
-      <div class={styles.socialContainer}>
-        <a class={styles.circleSocial} href="https://github.com/hugok2k" target="_blank">
-          <i class="fa-brands fa-github"></i>
+      <span class={styles.textDev}>Fullstack Developer, apasionado de la tecnología y la programación.</span>
+      <div class="socialContainer">
+        <a class="svglink" href="https://www.linkedin.com/in/devhugoavila/" target="_blank">
+          <Linkedin height="28" width="28" />
         </a>
-        <a class={styles.circleSocial} href="https://www.linkedin.com/in/devhugoavila/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
+        <a class="svglink" href="https://github.com/hugok2k" target="_blank">
+          <Github height="28" width="28" />
         </a>
       </div>
       <a
@@ -34,14 +36,28 @@ import '../stylesheet/global.css'
         href="https://github.com/hugok2k/portfolio/raw/main/documents/CV-HugoAvila.pdf"
         download="CV-HugoAvila.pdf">Descarga mi CV</a
       >
-    </section>
-    <About />
-    <Skills />
+    </article>
     <Project />
+    <div class="skillContainer">
+      <Skills />
+    </div>
+    <div class="aboutContainer">
+      <About />
+    </div>
   </main>
 </Layout>
 
 <style>
+  .aboutContainer {
+    min-height: 500px;
+  }
+  .skillContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+  }
   .main-container {
     display: flex;
     flex-direction: column;
@@ -50,16 +66,19 @@ import '../stylesheet/global.css'
     /* height: 100vh; */
     width: 100%;
   }
-  .fa-github,
-  .fa-linkedin {
-    color: var(--color-primary);
-    font-size: 30px;
-    padding: 0 10px 0 10px;
-    transition: all 0.3s linear;
+  .socialContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
   }
-  .fa-linkedin:hover,
-  .fa-github:hover {
-    color: var(--color-secondary);
-    transition: all 0.3s linear;
+  .svglink {
+    fill: var(--color-primary);
+    transition: 0.3s;
+  }
+  .svglink:hover {
+    fill: #fff;
   }
 </style>

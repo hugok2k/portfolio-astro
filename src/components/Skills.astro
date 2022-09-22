@@ -1,16 +1,21 @@
 ---
 import Astrosvg from './svg/astrosvg.astro'
 import Postgres from './svg/postgres.astro'
+import Javascript from '../components/svg/javascript.astro'
+import React from './svg/react.astro'
+import Html5 from './svg/html5.astro'
+import Css3 from './svg/css3.astro'
+import Node from './svg/node.astro'
 ---
 
 <span class="subtitle" id="skills">Skills</span>
 <div class="iconContainer">
   <div class="skillIconContainer">
-    <i class="fa-brands fa-square-js"></i>
+    <Javascript />
     <span>JavaScript</span>
   </div>
   <div class="skillIconContainer">
-    <i class="fa-brands fa-react"></i>
+    <React />
     <span>ReactJS</span>
   </div>
   <div class="skillIconContainer">
@@ -18,15 +23,19 @@ import Postgres from './svg/postgres.astro'
     <span>Astro</span>
   </div>
   <div class="skillIconContainer">
+    <Node />
+    <span>NodeJS</span>
+  </div>
+  <div class="skillIconContainer">
     <Postgres />
     <span>PostgreSQL</span>
   </div>
   <div class="skillIconContainer">
-    <i class="fa-brands fa-html5"></i>
+    <Html5 />
     <span>HTML5</span>
   </div>
   <div class="skillIconContainer">
-    <i class="fa-brands fa-css3-alt"></i>
+    <Css3 />
     <span>CSS3</span>
   </div>
 </div>
@@ -51,14 +60,14 @@ import Postgres from './svg/postgres.astro'
   }
   .fa-react {
     font-size: 80px;
-    color: #00d8ff;
+    color: hsl(189, 100%, 50%);
   }
   .fa-html5 {
     font-size: 80px;
-    color: #dd4b25;
+    color: hsl(12, 73%, 51%);
   }
   .fa-css3-alt {
     font-size: 80px;
-    color: #33a8dd;
+    color: hsl(199, 71%, 53%);
   }
 </style>
