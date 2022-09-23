@@ -1,8 +1,21 @@
+---
+import Linkedin from './svg/linkedin.astro'
+import Github from './svg/github.astro'
+---
+
 <footer class="footer">
   <span class="footerSpan">Licencia MIT sean libres de utilizar el codigo</span>
   <span class="footerSpan"
     >Repositorio en <a class="licence" href="https://github.com/hugok2k/portfolio-astro" target="_blank">Github</a>
   </span>
+  <div class="socialContainerFooter">
+    <a class="svglink" href="https://www.linkedin.com/in/devhugoavila/" target="_blank">
+      <Linkedin height="28" width="28" />
+    </a>
+    <a class="svglink" href="https://github.com/hugok2k" target="_blank">
+      <Github height="28" width="28" />
+    </a>
+  </div>
 </footer>
 
 <style>
@@ -22,5 +35,20 @@
   }
   .licence:hover {
     color: #fff;
+  }
+  .socialContainerFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+  }
+  .svglink {
+    fill: var(--color-primary);
+    transition: 0.3s;
+  }
+  .svglink:hover {
+    fill: #fff;
   }
 </style>
