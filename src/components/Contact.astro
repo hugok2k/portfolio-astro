@@ -5,7 +5,7 @@
     <label for="email">Email</label>
     <input class="input" type="email" name="email" placeholder="Email" />
     <label for="comments">Mensaje</label>
-    <textarea name="comments" rows="12"></textarea>
+    <textarea name="comments" rows="12" placeholder="Escribe tu mensaje."></textarea>
     <input type="hidden" name="_next" value="https://hugoavila.vercel.app/" />
     <input type="hidden" name="_template" value="box" />
     <input class="button" type="submit" value="Enviar" />
@@ -14,10 +14,6 @@
 
 <style>
   .formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     color: #fff;
     max-width: 100%;
   }
@@ -38,9 +34,6 @@
   }
   .input:active {
     background-color: rgba(255, 255, 255, 0.165);
-  }
-  .input::selection {
-    /* background-color: red; */
   }
   textarea {
     background-color: var(--color-bg);
