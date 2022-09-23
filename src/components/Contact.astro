@@ -1,14 +1,17 @@
-<form class="formContainer" action="https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6" method="POST">
-  <label for="nombre">Nombre</label>
-  <input class="input" type="text" name="name" placeholder="Nombre" />
-  <label for="email">Email</label>
-  <input class="input" type="email" name="email" placeholder="Email" />
-  <label for="comments">Mensaje</label>
-  <textarea name="comments" rows="12"></textarea>
-  <input class="button" type="submit" value="Enviar" />
-  <input type="hidden" name="_next" value="https://hugoavila.vercel.app/" />
-  <input type="hidden" name="_template" value="box" />
-</form>
+<div class="formContainer">
+  <form class="form" action="https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6" method="POST">
+    <label for="nombre">Nombre</label>
+    <input class="input" type="text" name="name" placeholder="Nombre" />
+    <label for="email">Email</label>
+    <input class="input" type="email" name="email" placeholder="Email" />
+    <label for="comments">Mensaje</label>
+    <textarea name="comments" rows="12"></textarea>
+    <input type="hidden" name="_next" value="https://hugoavila.vercel.app/" />
+    <input type="hidden" name="_template" value="box" />
+    <input class="button" type="submit" value="Enviar" />
+  </form>
+</div>
+
 <style>
   .formContainer {
     display: flex;
@@ -16,7 +19,11 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    width: 720px;
+    max-width: 100%;
+  }
+  .form {
+    max-width: 720px;
+    padding: 0px 40px 0 20px;
   }
   .input {
     background-color: var(--color-bg);
