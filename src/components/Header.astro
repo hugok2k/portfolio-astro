@@ -9,10 +9,10 @@ import Menu from './svg/menu.astro'
       <Menu />
     </a>
     <div class="menu" id="menu">
-      <a class="btnNavbar" href="#project" id="linkProject"> Project</a>
-      <a class="btnNavbar" href="#skills" id="linkSkills"> Skills</a>
-      <a class="btnNavbar" href="#about" id="linkAbout"> About</a>
-      <a class="btnNavbar" href="#contact" id="linkContact"> Contact</a>
+      <a class="btnNavbar" href="#project" id="linkProject"> .project<span class="colorBra">()</span></a>
+      <a class="btnNavbar" href="#skills" id="linkSkills"> .skills<span class="colorBra">()</span></a>
+      <a class="btnNavbar" href="#about" id="linkAbout"> .about<span class="colorBra">()</span></a>
+      <a class="btnNavbar" href="#contact" id="linkContact"> .contact<span class="colorBra">()</span></a>
     </div>
   </nav>
 </header>
@@ -46,13 +46,9 @@ import Menu from './svg/menu.astro'
     max-width: 1000px;
     margin: 0 auto;
   }
-  .textLogo {
-    font-family: Teko, sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-  }
   .colorBra {
     color: var(--color-primary);
+    transition: color 0.3s;
   }
   .navToggle {
     display: none;
@@ -62,9 +58,17 @@ import Menu from './svg/menu.astro'
   .navToggle:hover {
     fill: #fff;
   }
+  .textLogo {
+    font-family: Teko, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
   .textLogo:hover {
-    color: var(--color-secondary);
-    transition: all 0.2s linear;
+    color: var(--color-primary);
+  }
+  .textLogo:hover .colorBra{
+    color: #fff;
   }
   .menu {
     display: flex;
@@ -73,13 +77,18 @@ import Menu from './svg/menu.astro'
   }
   .btnNavbar {
     margin-left: 20px;
-    border-left: 2px solid var(--color-primary);
+    /* border-left: 2px solid var(--color-primary); */
     padding-left: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    transition: color 0.3s;
   }
   .btnNavbar:hover {
     margin-left: 20px;
-    color: var(--color-secondary);
-    transition: all 0.3s linear;
+    color: var(--color-primary);
+  }
+  .btnNavbar:hover .colorBra{
+    color: #fff;
   }
 
   @media (max-width: 768px) {
