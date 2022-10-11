@@ -1,5 +1,13 @@
 export const data = [
   {
+    href: 'https://github.com/hugok2k/hacktoberfest-2022',
+    title: 'Password Generator',
+    body: 'Generador de contraseñas seguras aleatorias utilizando letras, numeros, simbolos o bien palabras',
+    image: '/images/passgen.jpg',
+    tools: 'Astro - ReactJS - CSS - Tailwind',
+    deploy: 'https://hacktoberfest-2022.vercel.app/entry/hugok2k'
+  },
+  {
     href: 'https://github.com/hugok2k/portfolio-astro',
     title: 'Porfolio Astro',
     body: 'Portfolio personal realizado en Astro optimizado para una rápida apertura y baja transferencia.',
