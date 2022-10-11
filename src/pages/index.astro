@@ -16,11 +16,7 @@ import '../stylesheet/global.css'
     <Header />
     <article class="sectionContainer">
       <picture>
-        <img
-          class="imgAvatar"
-          src="https://res.cloudinary.com/hugok2k/image/upload/c_scale,w_200/v1661134228/IMG_20220105_110054726_HDR_qejxvm.jpg"
-          alt="avatar"
-        />
+        <img class="imgAvatar" src="/images/avatar.jpg" alt="avatar" />
       </picture>
       <span class="titleName">Hola. Soy Hugo</span>
       <span class="textDev">Fullstack Developer, apasionado de la tecnología y la programación.</span>
@@ -90,6 +86,7 @@ import '../stylesheet/global.css'
   .imgAvatar {
     border-radius: 50%;
     width: 200px;
+    height: 200px;
   }
   .titleName {
     font-size: 60px;
@@ -119,5 +116,20 @@ import '../stylesheet/global.css'
     background-color: #fff;
     color: var(--color-primary);
     transition: all 0.3s linear;
+  }
+  @media (max-width: 500px) {
+    .imgAvatar {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+    }
+    .titleName {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    .textDev {
+      font-size: 16px;
+      width: 340px;
+    }
   }
 </style>
