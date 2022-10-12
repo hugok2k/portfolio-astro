@@ -1,0 +1,95 @@
+---
+import Github from '../components/svg/github.astro'
+import Linkedin from '../components/svg/linkedin.astro'
+---
+
+<article class="sectionContainer">
+  <picture>
+    <img class="imgAvatar" src="/images/avatar.jpg" alt="avatar" />
+  </picture>
+  <span class="titleName">Hola. Soy Hugo</span>
+  <span class="textDev">Fullstack Developer, apasionado de la tecnología y la programación.</span>
+  <div class="socialContainer">
+    <a class="svglink" href="https://www.linkedin.com/in/devhugoavila/" target="_blank">
+      <Linkedin height="28" width="28" />
+    </a>
+    <a class="svglink" href="https://github.com/hugok2k" target="_blank">
+      <Github height="28" width="28" />
+    </a>
+  </div>
+  <a class="buttonLanding" href="/data/CV-HugoAvila.pdf" download="CV-HugoAvila.pdf">Descarga mi CV</a>
+</article>
+
+<style>
+  .sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+  }
+  .imgAvatar {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  .titleName {
+    font-size: 60px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+  }
+  .textDev {
+    font-size: 20px;
+    text-align: center;
+  }
+  .socialContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  .svglink {
+    fill: var(--color-primary);
+    transition: 0.3s;
+  }
+  .svglink:hover {
+    fill: #fff;
+  }
+  .buttonLanding {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 12px 10px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    font-weight: 600;
+    transition: all 0.3s linear;
+    text-decoration: none;
+  }
+  .buttonLanding:hover {
+    background-color: #fff;
+    color: var(--color-primary);
+    transition: all 0.3s linear;
+  }
+  @media (max-width: 500px) {
+    .imgAvatar {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+    }
+    .titleName {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    .textDev {
+      font-size: 16px;
+      width: 340px;
+    }
+  }
+</style>
