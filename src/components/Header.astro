@@ -5,7 +5,7 @@ import Menu from './svg/menu.astro'
 <header class="headerContainer">
   <nav class="nav">
     <a class="textLogo" href="#"><span class="colorBra">{'{'}</span> HA <span class="colorBra">{'}'}</span></a>
-    <a class="navToggle" id="navToogle" aria-label="open menu">
+    <a class="navToggle" id="navToogle">
       <Menu />
     </a>
     <div class="menu" id="menu">
@@ -67,7 +67,7 @@ import Menu from './svg/menu.astro'
   .textLogo:hover {
     color: var(--color-primary);
   }
-  .textLogo:hover .colorBra{
+  .textLogo:hover .colorBra {
     color: #fff;
   }
   .menu {
@@ -87,7 +87,7 @@ import Menu from './svg/menu.astro'
     margin-left: 20px;
     color: var(--color-primary);
   }
-  .btnNavbar:hover .colorBra{
+  .btnNavbar:hover .colorBra {
     color: #fff;
   }
 
@@ -139,9 +139,6 @@ import Menu from './svg/menu.astro'
   const linkContact = document.querySelector('#linkContact')
   navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('menuOn')
-    navMenu.classList.contains('menuOn')
-      ? navToggle.setAttribute('arial-label', 'close menu')
-      : navToggle.setAttribute('arial-label', 'open menu')
   })
 
   linkAbout.addEventListener('click', () => {
