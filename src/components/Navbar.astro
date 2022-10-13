@@ -5,7 +5,7 @@ import Menu from './svg/menu.astro'
 <header class="headerContainer">
   <nav class="nav">
     <a class="textLogo" href="#"><span class="colorBra">{'{'}</span> HA <span class="colorBra">{'}'}</span></a>
-    <a class="navToggle" id="navToogle">
+    <a class="navToggle">
       <Menu />
     </a>
     <div class="menu" id="menu">
@@ -131,7 +131,7 @@ import Menu from './svg/menu.astro'
   }
 </style>
 <script>
-  const navToggle = document.querySelector('#navToogle')
+  const navToggle = document.querySelector('.navToggle')
   const navMenu = document.querySelector('#menu')
   const linkAbout = document.querySelector('#linkAbout')
   const linkSkills = document.querySelector('#linkSkills')
