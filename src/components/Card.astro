@@ -19,7 +19,7 @@ import LinkEx from './svg/link.astro'
   </span>
   <div class="imgContainer">
     <img class="imgProject" src={image} alt={title} />
-    <a class="textImg" href={deploy} target="_blank">
+    <a class="textImg" href={deploy} target="_blank" rel="noreferrer noopener">
       <span class="textDeploy">Deploy</span>
       <LinkEx height="22" width="22" />
     </a>
@@ -29,8 +29,8 @@ import LinkEx from './svg/link.astro'
   </p>
   <span class="tools">{tools}</span>
   <span class="svglinkContainer">
-    <a class="svglink" href={deploy} target="_blank"><LinkEx height="26" width="26" /></a>
-    <a class="svglink" href={href} target="_blank"><Github height="24" width="24" /></a>
+    <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener"><LinkEx height="26" width="26" /></a>
+    <a class="svglink" href={href} target="_blank" rel="noreferrer noopener"><Github height="24" width="24" /></a>
   </span>
 </div>
 
