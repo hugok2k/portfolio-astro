@@ -12,10 +12,22 @@ import Github from './svg/github.astro'
     >
   </span>
   <div class="socialContainerFooter">
-    <a class="svglink" href="https://www.linkedin.com/in/devhugoavila/" target="_blank" rel="noreferrer noopener">
+    <a
+      class="svglink"
+      href="https://www.linkedin.com/in/devhugoavila/"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="link to linkedin"
+    >
       <Linkedin height="28" width="28" />
     </a>
-    <a class="svglink" href="https://github.com/hugok2k" target="_blank" rel="noreferrer noopener">
+    <a
+      class="svglink"
+      href="https://github.com/hugok2k"
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label="link to github"
+    >
       <Github height="28" width="28" />
     </a>
   </div>
@@ -29,16 +41,19 @@ import Github from './svg/github.astro'
     align-items: center;
     margin-top: 100px;
     min-height: 200px;
-    background-color: #0a0a0a;
+    background-color: var(--color-bg-footer);
     width: 100%;
     font-size: 14px;
   }
+  .footerSpan {
+    color: var(--color-text-base);
+  }
   .licence {
-    color: var(--color-primary);
+    color: var(--color-licence);
     text-decoration: none;
   }
   .licence:hover {
-    color: #fff;
+    color: var(--color-svg);
   }
   .socialContainerFooter {
     display: flex;
@@ -53,6 +68,6 @@ import Github from './svg/github.astro'
     transition: 0.3s;
   }
   .svglink:hover {
-    fill: #fff;
+    fill: var(--color-svg);
   }
 </style>

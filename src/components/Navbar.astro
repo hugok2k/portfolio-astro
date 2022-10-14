@@ -1,5 +1,6 @@
 ---
 import Menu from './svg/menu.astro'
+import Moon from './svg/moon.astro'
 ---
 
 <header class="headerContainer">
@@ -13,10 +14,29 @@ import Menu from './svg/menu.astro'
       <a class="btnNavbar" href="/#skills" id="linkSkills"> .skills<span class="colorBra">()</span></a>
       <a class="btnNavbar" href="/#about" id="linkAbout"> .about<span class="colorBra">()</span></a>
       <a class="btnNavbar" href="/#contact" id="linkContact"> .contact<span class="colorBra">()</span></a>
+      <button class="usermode" title="darkmode">
+        <span class="moon"><Moon /></span>
+      </button>
     </div>
   </nav>
 </header>
 <style>
+  .usermode {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-bg);
+    border: none;
+    margin-left: 30px;
+  }
+  .moon {
+    position: relative;
+    fill: var(--color-text-base);
+    transition: fill 0.3s;
+    cursor: pointer;
+  }
+  .moon:hover {
+    fill: var(--color-primary);
+  }
   .fa-bars {
     color: var(--color-primary);
     font-size: 30px;
@@ -29,12 +49,11 @@ import Menu from './svg/menu.astro'
   }
   .headerContainer {
     position: fixed;
+    background-color: var(--color-bg);
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1;
-    /* background-color: rgba(0, 0, 0, 0.4); */
-    /* backdrop-filter: blur(5px); */
   }
   .nav {
     display: flex;
@@ -42,7 +61,6 @@ import Menu from './svg/menu.astro'
     align-items: center;
     padding: 10px 32px 10px 26px;
     font-weight: 600;
-    background-color: var(--color-bg);
     max-width: 1000px;
     margin: 0 auto;
   }
@@ -73,11 +91,9 @@ import Menu from './svg/menu.astro'
   .menu {
     display: flex;
     flex-direction: row;
-    background-color: var(--color-bg);
   }
   .btnNavbar {
     margin-left: 20px;
-    /* border-left: 2px solid var(--color-primary); */
     padding-left: 8px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
@@ -102,7 +118,14 @@ import Menu from './svg/menu.astro'
       height: calc(100% - 63px);
       padding-top: 60px;
       transition: left 0.3s;
-      font-size: 40px;
+      font-size: 30px;
+      background-color: var(--color-bg);
+      transition: all 0.6s;
+    }
+    .usermode {
+      height: 40px;
+      width: 40px;
+      margin-top: 30px;
     }
     .btnNavbar {
       padding: 20px;
@@ -131,6 +154,7 @@ import Menu from './svg/menu.astro'
   }
 </style>
 <script>
+  // Code for toggle menu
   const navToggle = document.querySelector('.navToggle')
   const navMenu = document.querySelector('#menu')
   const linkAbout = document.querySelector('#linkAbout')
@@ -153,4 +177,17 @@ import Menu from './svg/menu.astro'
   linkContact.addEventListener('click', () => {
     navMenu.classList.toggle('menuOn')
   })
+
+  // Dark mode
+  // const preferenceOS = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  const mode = document.querySelector('.usermode')
+  const setMode = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }
+  mode.addEventListener('click', () => {
+    let toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+    setMode(toggleTheme)
+  })
+  setMode(localStorage.getItem('theme') || 'dark')
 </script>

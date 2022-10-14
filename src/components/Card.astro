@@ -29,8 +29,12 @@ import LinkEx from './svg/link.astro'
   </p>
   <span class="tools">{tools}</span>
   <span class="svglinkContainer">
-    <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener"><LinkEx height="26" width="26" /></a>
-    <a class="svglink" href={href} target="_blank" rel="noreferrer noopener"><Github height="24" width="24" /></a>
+    <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="link to deploy"
+      ><LinkEx height="26" width="26" />
+    </a>
+    <a class="svglink" href={href} target="_blank" rel="noreferrer noopener" aria-label="link to github"
+      ><Github height="24" width="24" />
+    </a>
   </span>
 </div>
 
