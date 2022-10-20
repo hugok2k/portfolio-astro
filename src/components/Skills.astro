@@ -9,42 +9,51 @@ import Node from './svg/node.astro'
 import Redux from './svg/redux.astro'
 ---
 
-<span class="subtitle" id="skills">Skills</span>
-<div class="iconContainer">
-  <div class="skillIconContainer">
-    <Javascript />
-    <span>JavaScript</span>
+<section class="section-container">
+  <span class="subtitle" id="skills">Skills</span>
+  <div class="iconContainer">
+    <div class="skillIconContainer">
+      <Javascript />
+      <span>JavaScript</span>
+    </div>
+    <div class="skillIconContainer">
+      <React />
+      <span>ReactJS</span>
+    </div>
+    <div class="skillIconContainer">
+      <Astrosvg />
+      <span>Astro</span>
+    </div>
+    <div class="skillIconContainer">
+      <Node />
+      <span>NodeJS</span>
+    </div>
+    <div class="skillIconContainer">
+      <Postgres />
+      <span>PostgreSQL</span>
+    </div>
+    <div class="skillIconContainer">
+      <Redux />
+      <span>Redux</span>
+    </div>
+    <div class="skillIconContainer">
+      <Html5 />
+      <span>HTML5</span>
+    </div>
+    <div class="skillIconContainer">
+      <Css3 />
+      <span>CSS3</span>
+    </div>
   </div>
-  <div class="skillIconContainer">
-    <React />
-    <span>ReactJS</span>
-  </div>
-  <div class="skillIconContainer">
-    <Astrosvg />
-    <span>Astro</span>
-  </div>
-  <div class="skillIconContainer">
-    <Node />
-    <span>NodeJS</span>
-  </div>
-  <div class="skillIconContainer">
-    <Postgres />
-    <span>PostgreSQL</span>
-  </div>
-  <div class="skillIconContainer">
-    <Redux />
-    <span>Redux</span>
-  </div>
-  <div class="skillIconContainer">
-    <Html5 />
-    <span>HTML5</span>
-  </div>
-  <div class="skillIconContainer">
-    <Css3 />
-    <span>CSS3</span>
-  </div>
-</div>
+</section>
+
 <style>
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .iconContainer {
     display: flex;
     flex-wrap: wrap;
