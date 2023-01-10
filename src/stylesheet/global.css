@@ -31,6 +31,9 @@
   --color-btn-text: hsl(0, 0%, 100%);
 }
 
+:root {
+  color-scheme: dark;
+}
 * {
   margin: 0;
   padding: 0;
