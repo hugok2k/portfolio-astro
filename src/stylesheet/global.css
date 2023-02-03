@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 [data-theme='light'] {
   --color-text-base: hsl(0, 0%, 11%);
@@ -40,11 +39,12 @@
   transition: background-color 0.6s;
 }
 html {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
   color: var(--color-text-base);
   scroll-behavior: smooth;
 }
 body {
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,12 +55,11 @@ body {
 a {
   text-decoration: none;
 }
-h3 {
-  font-weight: 400;
-}
+
 .subtitle {
   font-size: 28px;
   padding-top: 80px;
   margin-bottom: 82px;
   border-bottom: 2px solid var(--color-primary);
+  font-weight: 400;
 }
