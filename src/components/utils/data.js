@@ -8,6 +8,14 @@ export const data = [
     deploy: 'https://www.123autorental.com.ar/'
   },
   {
+    href: 'https://github.com/hugok2k/qrcode-generator',
+    title: 'QR Code Generator',
+    body: 'Generador de código QR con posibilidad de descargarlo en formato PNG',
+    image: '/images/qr-gen.webp',
+    tools: 'ReactJS - Tailwind',
+    deploy: 'https://qrcode-k2k.vercel.app/'
+  },
+  {
     href: 'https://github.com/hugok2k/hacktoberfest-2022',
     title: 'Password Generator',
     body: 'Generador de contraseñas seguras aleatorias utilizando letras, numeros, simbolos o bien palabras',
