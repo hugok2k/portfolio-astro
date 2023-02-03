@@ -1,12 +1,10 @@
 <h3 class="subtitle" id="contact">Contact</h3>
 <section class="formContainer">
   <form class="form" action="https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6" method="POST">
-    <label for="nombre">Nombre</label>
-    <input class="input" type="text" name="name" placeholder="Nombre" />
-    <label for="email">Email</label>
-    <input class="input" type="email" name="email" placeholder="Email" />
-    <label for="comments">Mensaje</label>
-    <textarea name="comments" rows="12" placeholder="Escribe tu mensaje."></textarea>
+    <input class="input" type="text" name="name" placeholder="Nombre" onfocus="this.placeholder=''" />
+    <input class="input" type="email" name="email" placeholder="Email" onfocus="this.placeholder=''" />
+    <textarea class="textarea" name="comments" rows="12" placeholder="Escribe tu mensaje." onfocus="this.placeholder=''"
+    ></textarea>
     <input type="hidden" name="_next" value="https://hugoavila.vercel.app/" />
     <input type="hidden" name="_template" value="box" />
     <input class="button" type="submit" value="Enviar" />
@@ -22,7 +20,7 @@
     max-width: 100%;
   }
   .form {
-    max-width: 720px;
+    max-width: 710px;
     padding: 0px 40px 0 20px;
   }
   .input {
@@ -31,10 +29,14 @@
     border: 2px solid var(--color-primary);
     border-radius: 6px;
     width: 100%;
-    padding: 12px 10px 12px 10px;
+    padding: 12px 14px;
     color: var(--color-text-base);
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 20px;
+    font-family: 'Roboto Mono', sans-serif;
+  }
+  .input::placeholder {
+    color: var(--color-text-base);
   }
   .input:active {
     background-color: rgba(255, 255, 255, 0.165);
@@ -42,15 +44,19 @@
   label {
     color: var(--color-text-base);
   }
-  textarea {
+  .textarea {
     background-color: var(--color-bg);
     color: var(--color-text-base);
-    font-size: 16px;
+    font-size: 1rem;
     width: 100%;
     outline: none;
     border: 2px solid var(--color-primary);
     border-radius: 6px;
-    padding: 10px;
+    padding: 14px;
+    font-family: 'Roboto Mono', sans-serif;
+  }
+  .textarea::placeholder {
+    color: var(--color-text-base);
   }
   .button {
     background-color: var(--color-btn-bg);
