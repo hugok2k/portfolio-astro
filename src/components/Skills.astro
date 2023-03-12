@@ -9,48 +9,60 @@ import Node from './svg/node.astro'
 import Redux from './svg/redux.astro'
 import Typescript from './svg/typescript.astro'
 import Next from './svg/next.astro'
+import Tailwind from './svg/tailwind.astro'
+import Monbodb from './svg/monbodb.astro'
 ---
 
-<section class="section-container">
-  <h3 class="subtitle" id="skills">Skills</h3>
-  <div class="iconContainer">
-    <div class="skillIconContainer">
+<section class='section-container'>
+  <h3 class='subtitle' id='skills'>Skills</h3>
+  <div class='iconContainer'>
+    <div class='skillIconContainer'>
       <Javascript />
       <span>JavaScript</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Typescript />
       <span>Typescript</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <React />
       <span>ReactJS</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Next />
       <span>NextJS</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Astrosvg />
       <span>Astro</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Node />
       <span>NodeJS</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Postgres />
       <span>PostgreSQL</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
+      <div class='fixSvgTailwind'>
+        <Tailwind />
+      </div>
+      <span>Tailwind</span>
+    </div>
+    <div class='skillIconContainer'>
+      <Monbodb />
+      <span>MongoDB</span>
+    </div>
+    <div class='skillIconContainer'>
       <Redux />
       <span>Redux</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Html5 />
       <span>HTML5</span>
     </div>
-    <div class="skillIconContainer">
+    <div class='skillIconContainer'>
       <Css3 />
       <span>CSS3</span>
     </div>
@@ -63,13 +75,16 @@ import Next from './svg/next.astro'
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 120px;
   }
   .iconContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 500px;
+    max-width: 800px;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
   .skillIconContainer {
     display: flex;
@@ -78,5 +93,13 @@ import Next from './svg/next.astro'
     align-items: center;
     width: 80px;
     text-align: center;
+  }
+  .fixSvgTailwind {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
   }
 </style>
