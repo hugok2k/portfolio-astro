@@ -5,40 +5,109 @@ export interface Props {
   href: string
   deploy: string
   image: string
-  tools: string
+  tools: string[]
 }
 
 const { title, body, href, deploy, image, tools } = Astro.props
 import Github from './svg/github.astro'
 import LinkEx from './svg/link.astro'
+import Next from './svg/next.astro'
+import Css3 from './svg/css3.astro'
+import Google from './svg/google.astro'
+import React from './svg/react.astro'
+import Tailwind from './svg/tailwind.astro'
+import Astrosvg from './svg/astrosvg.astro'
+import Node from './svg/node.astro'
+import Moon from './svg/moon.astro'
+import Monbodb from './svg/monbodb.astro'
+import Codepen from './svg/codepen.astro'
+import Html5 from './svg/html5.astro'
 ---
 
-<article class="cardContainer">
-  <h2 class="title">
+<article class='cardContainer'>
+  <h2 class='title'>
     {title}
   </h2>
-  <div class="imgContainer">
-    <img class="imgProject" src={image} alt={title} />
-    <a class="textImg" href={deploy} target="_blank" rel="noreferrer noopener">
-      <span class="textDeploy">Ir al sitio</span>
-      <LinkEx height="22" width="22" />
+  <div class='imgContainer'>
+    <img class='imgProject' src={image} alt={title} />
+    <a class='textImg' href={deploy} target='_blank' rel='noreferrer noopener'>
+      <span class='textDeploy'>Ir al sitio</span>
+      <LinkEx height='22' width='22' />
     </a>
   </div>
-  <p class="parrafo">
+  <p class='parrafo'>
     {body}
   </p>
-  <span class="tools">{tools}</span>
-  <span class="svglinkContainer">
-    <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="link to deploy"
-      ><LinkEx height="26" width="26" />
+  <div class='tools'>
+    {
+      tools.map((e) => {
+        return (
+          <span class='toolSvg'>
+            {e === 'NextJS' ? (
+              <Next />
+            ) : e === 'CSS' ? (
+              <Css3 />
+            ) : e === 'GoogleAPI' ? (
+              <Google />
+            ) : e === 'ReactJS' ? (
+              <React />
+            ) : e === 'Tailwind' ? (
+              <Tailwind />
+            ) : e === 'Astro' ? (
+              <Astrosvg />
+            ) : e === 'NodeJS' ? (
+              <Node />
+            ) : e === 'MongoDB' ? (
+              <Monbodb />
+            ) : e === 'HTML' ? (
+              <Html5 />
+            ) : (
+              ''
+            )}
+          </span>
+        )
+      })
+    }
+  </div>
+  <span class='svglinkContainer'>
+    <a
+      class='svglink'
+      href={deploy}
+      target='_blank'
+      rel='noreferrer noopener'
+      aria-label='link to deploy'
+      ><LinkEx height='26' width='26' />
     </a>
-    <a class="svglink" href={href} target="_blank" rel="noreferrer noopener" aria-label="link to github"
-      ><Github height="24" width="24" />
-    </a>
+    {
+      href.includes('github') ? (
+        <a
+          class='svglink'
+          href={href}
+          target='_blank'
+          rel='noreferrer noopener'
+          aria-label='link to github'
+        >
+          <Github height='24' width='24' />
+        </a>
+      ) : (
+        <a
+          class='svglinkCodepen'
+          href={href}
+          target='_blank'
+          rel='noreferrer noopener'
+          aria-label='link to github'
+        >
+          <Codepen />
+        </a>
+      )
+    }
   </span>
 </article>
 
 <style>
+  .tailwind {
+    height: 24px;
+  }
   .cardContainer {
     display: flex;
     flex-direction: column;
@@ -80,6 +149,9 @@ import LinkEx from './svg/link.astro'
     height: 163px;
   }
   .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
     font-size: 12px;
     padding-left: 20px;
     width: 320px;
@@ -97,12 +169,26 @@ import LinkEx from './svg/link.astro'
     text-align: right;
   }
   .svglink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     fill: #fff;
-    height: 10px;
     transition: 0.3s;
   }
   .svglink:hover {
     fill: var(--color-primary);
+  }
+  .svglinkCodepen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    stroke: #fff;
+    transition: 0.3s;
+  }
+  .svglinkCodepen:hover {
+    stroke: var(--color-primary);
   }
   .textImg {
     display: flex;
@@ -131,5 +217,12 @@ import LinkEx from './svg/link.astro'
   }
   a:visited {
     color: var(--color-text-base);
+  }
+  .toolSvg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
   }
 </style>
