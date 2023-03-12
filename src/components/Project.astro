@@ -3,12 +3,21 @@ import Card from './Card.astro'
 import { data } from './utils/data'
 ---
 
-<section class="container-project">
-  <h3 class="subtitle" id="project">Projects</h3>
-  <article class="skillContainer">
+<section class='container-project'>
+  <h3 class='subtitle' id='project'>Projects</h3>
+  <article class='skillContainer'>
     {
       data.map((e) => {
-        return <Card href={e.href} title={e.title} body={e.body} image={e.image} tools={e.tools} deploy={e.deploy} />
+        return (
+          <Card
+            href={e.href}
+            title={e.title}
+            body={e.body}
+            image={e.image}
+            tools={e.tools}
+            deploy={e.deploy}
+          />
+        )
       })
     }
   </article>

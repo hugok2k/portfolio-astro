@@ -3,19 +3,30 @@ import Menu from './svg/menu.astro'
 import Moon from './svg/moon.astro'
 ---
 
-<header class="headerContainer">
-  <nav class="nav">
-    <a class="textLogo" href="/#"><span class="colorBra">{'{'}</span> HA <span class="colorBra">{'}'}</span></a>
-    <span class="navToggle">
+<header class='headerContainer'>
+  <nav class='nav'>
+    <a class='textLogo' href='/#'
+      ><span class='colorBra'>{'{'}</span> HA <span class='colorBra'>{'}'}</span
+      ></a
+    >
+    <span class='navToggle'>
       <Menu />
     </span>
-    <div class="menu" id="menu">
-      <a class="btnNavbar" href="/#project" id="linkProject"> .project<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#skills" id="linkSkills"> .skills<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#about" id="linkAbout"> .about<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#contact" id="linkContact"> .contact<span class="colorBra">()</span></a>
-      <button class="usermode" title="darkmode">
-        <span class="moon"><Moon /></span>
+    <div class='menu' id='menu'>
+      <a class='btnNavbar' href='/#project' id='linkProject'>
+        .projects<span class='colorBra'>()</span></a
+      >
+      <a class='btnNavbar' href='/#skills' id='linkSkills'>
+        .skills<span class='colorBra'>()</span></a
+      >
+      <a class='btnNavbar' href='/#about' id='linkAbout'>
+        .about<span class='colorBra'>()</span></a
+      >
+      <a class='btnNavbar' href='/#contact' id='linkContact'>
+        .contact<span class='colorBra'>()</span></a
+      >
+      <button class='usermode' title='darkmode'>
+        <span class='moon'><Moon /></span>
       </button>
     </div>
   </nav>
@@ -61,7 +72,7 @@ import Moon from './svg/moon.astro'
     align-items: center;
     padding: 10px 32px 10px 26px;
     font-weight: 600;
-    max-width: 1000px;
+    max-width: 820px;
     margin: 0 auto;
   }
   .colorBra {
@@ -179,15 +190,40 @@ import Moon from './svg/moon.astro'
   })
 
   // Dark mode
-  // const preferenceOS = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  // const preferenceOS = window.matchMedia('(prefers-color-scheme: dark)').matches
+  //   ? 'dark'
+  //   : 'light'
   const mode = document.querySelector('.usermode')
   const setMode = (theme) => {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }
   mode.addEventListener('click', () => {
-    let toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+    let toggleTheme =
+      localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
     setMode(toggleTheme)
   })
-  setMode(localStorage.getItem('theme') || 'dark')
+  setMode(localStorage.getItem('theme') || 'dark') // default dark mode. Other option, use preferenceOS.
+
+  // Easter egg :)
+  let count = 0
+  const harryPotterLumos = ['l', 'u', 'm', 'o', 's']
+  const harryPotterNox = ['n', 'o', 'x']
+  document.addEventListener('keydown', (e) => {
+    if (e.key === harryPotterLumos[count]) {
+      count++
+      if (count === harryPotterLumos.length) {
+        setMode('light')
+        count = 0
+      }
+    } else if (e.key === harryPotterNox[count]) {
+      count++
+      if (count === harryPotterNox.length) {
+        setMode('dark')
+        count = 0
+      }
+    } else {
+      count = 0
+    }
+  })
 </script>
