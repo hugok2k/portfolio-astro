@@ -1,27 +1,60 @@
-<h3 class="subtitle" id="contact">Contact</h3>
-<section class="formContainer">
-  <form class="form" action="https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6" method="POST">
-    <input class="input" type="text" name="name" placeholder="Nombre" required onfocus="this.placeholder=''" />
-    <input class="input" type="email" name="email" placeholder="Email" required onfocus="this.placeholder=''" />
+<h3 class='subtitle contact' id='contact'>Contact</h3>
+<section class='formContainer'>
+  <form
+    class='form'
+    action='https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6'
+    method='POST'
+  >
+    <input
+      class='input'
+      type='text'
+      name='name'
+      placeholder='Nombre'
+      required
+      onfocus="this.placeholder=''"
+    />
+    <input
+      class='input'
+      type='email'
+      name='email'
+      placeholder='Email'
+      required
+      onfocus="this.placeholder=''"
+    />
     <textarea
-      class="textarea"
-      name="comments"
-      rows="12"
-      placeholder="Escribe tu mensaje."
+      class='textarea'
+      name='comments'
+      rows='12'
+      placeholder='Escribe tu mensaje.'
       required
       onfocus="this.placeholder=''"></textarea>
-    <input type="hidden" name="_next" value="https://hugoavila.vercel.app/" />
-    <input type="hidden" name="_template" value="box" />
-    <button class="button" type="submit">
-      <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22.152 3.553L11.178 21.004l-1.67-8.596L2 7.898l20.152-4.345zM9.456 12.444l12.696-8.89"></path>
-        <defs><clipPath id="send-diagonal_svg__clip0_2476_13290"><path d="M0 0h24v24H0z"></path></clipPath></defs>
+    <input type='hidden' name='_next' value='https://hugoavila.vercel.app/' />
+    <input type='hidden' name='_template' value='box' />
+    <button class='button' type='submit'>
+      <svg
+        width='24px'
+        height='24px'
+        viewBox='0 0 24 24'
+        stroke-width='1.5'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M22.152 3.553L11.178 21.004l-1.67-8.596L2 7.898l20.152-4.345zM9.456 12.444l12.696-8.89'
+        ></path>
+        <defs
+          ><clipPath id='send-diagonal_svg__clip0_2476_13290'
+            ><path d='M0 0h24v24H0z'></path></clipPath
+          ></defs
+        >
       </svg> Enviar</button
     >
   </form>
 </section>
 
 <style>
+  .contact {
+    margin-top: 40px;
+  }
   .textColor {
     color: var(--color-text-base);
   }
