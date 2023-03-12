@@ -1,5 +1,13 @@
 export const data = [
   {
+    href: 'https://github.com/hugok2k/',
+    title: 'Active Rent a Car',
+    body: 'Sitio web de alquiler de automóviles con posibilidad de modificar los precios en tiempo real.',
+    image: '/images/active.webp',
+    tools: ['NextJS', 'TypeScript', 'CSS', 'GoogleAPI'],
+    deploy: 'https://www.activerentacar.com.ar/'
+  },
+  {
     href: 'https://github.com/hugok2k/cloudinary-hackaton',
     title: 'CustomAvatar',
     body: 'Proyecto realizado para la hackaton de Cloudinary. Aplicación web para crear avatares personalizados.',
