@@ -109,4 +109,8 @@ dist
 # package-lock.json
 package-lock.json
 
+# pnpm
+.pnpm-debug.log
+pnpm-lock.yaml
+
 .DS_STORE
