@@ -1,5 +1,6 @@
 # Portfolio
-My personal portfolio built in [Astro](https://astro.build/) 🚀.
+My personal portfolio built in [Astro](https://astro.build/) 🚀
+Version 0.3.0
 
 
 ### Running Locally
@@ -8,6 +9,6 @@ My personal portfolio built in [Astro](https://astro.build/) 🚀.
 
 `cd portfolio-astro`
 
-`npm i`
+`pnpm i`
 
-`npm run dev`
+`pnpm run dev`
