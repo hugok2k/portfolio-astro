@@ -10,7 +10,7 @@ export const data = [
   {
     href: 'https://github.com/hugok2k/cloudinary-hackaton',
     title: 'CustomAvatar',
-    body: 'Proyecto realizado para la hackaton de Cloudinary. Aplicación web para crear avatares personalizados.',
+    body: 'Proyecto realizado para la hackaton de Cloudinary. Crea avatares detectando el rostro con IA Cloudinary.',
     image: '/images/customavatar.webp',
     tools: ['NextJS', 'Tailwind'],
     deploy: 'https://cloudinary-hackaton.vercel.app/'
