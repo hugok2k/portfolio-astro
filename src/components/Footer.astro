@@ -1,6 +1,7 @@
 ---
 import Linkedin from './svg/linkedin.astro'
 import Github from './svg/github.astro'
+import Mail from './svg/mail.astro'
 ---
 
 <footer class='footer'>
@@ -36,6 +37,15 @@ import Github from './svg/github.astro'
       aria-label='link to github'
     >
       <Github height='28' width='28' />
+    </a>
+    <a
+      class='svglinkStroke'
+      href='mailto:hugok2k@gmail.com'
+      target='_blank'
+      aria-label='Link a correo'
+      rel='noreferrer noopener'
+    >
+      <Mail />
     </a>
   </div>
 </footer>
@@ -78,5 +88,12 @@ import Github from './svg/github.astro'
   }
   .svglink:hover {
     fill: var(--color-svg);
+  }
+  .svglinkStroke {
+    stroke: var(--color-primary);
+    transition: 0.3s;
+  }
+  .svglinkStroke:hover {
+    stroke: var(--color-svg);
   }
 </style>
