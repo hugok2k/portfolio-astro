@@ -5,7 +5,7 @@ import Moon from './svg/moon.astro'
 
 <header class='headerContainer'>
   <nav class='nav'>
-    <a class='textLogo' href='/#'
+    <a class='textLogo' href='/#' aria-label='Volver al inicio'
       ><span class='colorBra'>{'{'}</span> HA <span class='colorBra'>{'}'}</span
       ></a
     >
@@ -25,7 +25,11 @@ import Moon from './svg/moon.astro'
       <a class='btnNavbar' href='/#contact' id='linkContact'>
         .contact<span class='colorBra'>()</span></a
       >
-      <button class='usermode' title='darkmode'>
+      <button
+        class='usermode'
+        title='darkmode'
+        aria-label='Cambiar a modo oscuro o claro.'
+      >
         <span class='moon'><Moon /></span>
       </button>
     </div>

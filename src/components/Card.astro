@@ -18,7 +18,6 @@ import React from './svg/react.astro'
 import Tailwind from './svg/tailwind.astro'
 import Astrosvg from './svg/astrosvg.astro'
 import Node from './svg/node.astro'
-import Moon from './svg/moon.astro'
 import Monbodb from './svg/monbodb.astro'
 import Codepen from './svg/codepen.astro'
 import Html5 from './svg/html5.astro'
@@ -26,85 +25,93 @@ import Typescript from './svg/typescript.astro'
 ---
 
 <article class='cardContainer'>
-  <h2 class='title'>
-    {title}
-  </h2>
-  <div class='imgContainer'>
+  <header class='imgContainer'>
     <img class='imgProject' src={image} alt={title} />
-    <a class='textImg' href={deploy} target='_blank' rel='noreferrer noopener'>
-      <span class='textDeploy'>Ir al sitio</span>
-      <LinkEx height='22' width='22' />
-    </a>
-  </div>
-  <p class='parrafo'>
-    {body}
-  </p>
-  <div class='tools'>
-    {
-      tools.map((e) => {
-        return (
-          <span class='toolSvg'>
-            {e === 'NextJS' ? (
-              <Next />
-            ) : e === 'CSS' ? (
-              <Css3 />
-            ) : e === 'GoogleAPI' ? (
-              <Google />
-            ) : e === 'ReactJS' ? (
-              <React />
-            ) : e === 'Tailwind' ? (
-              <Tailwind />
-            ) : e === 'Astro' ? (
-              <Astrosvg />
-            ) : e === 'NodeJS' ? (
-              <Node />
-            ) : e === 'MongoDB' ? (
-              <Monbodb />
-            ) : e === 'HTML' ? (
-              <Html5 />
-            ) : e === 'TypeScript' ? (
-              <Typescript />
-            ) : (
-              ''
-            )}
-          </span>
-        )
-      })
-    }
-  </div>
-  <span class='svglinkContainer'>
     <a
-      class='svglink'
+      class='textImg'
       href={deploy}
       target='_blank'
       rel='noreferrer noopener'
-      aria-label='link to deploy'
-      ><LinkEx height='26' width='26' />
+      aria-label='Link hacia la demo'
+    >
+      <span class='textDeploy'>Ir al sitio</span>
+      <LinkEx height='22' width='22' />
     </a>
-    {
-      href.includes('github') ? (
-        <a
-          class='svglink'
-          href={href}
-          target='_blank'
-          rel='noreferrer noopener'
-          aria-label='link to github'
-        >
-          <Github height='24' width='24' />
-        </a>
-      ) : (
-        <a
-          class='svglinkCodepen'
-          href={href}
-          target='_blank'
-          rel='noreferrer noopener'
-          aria-label='link to github'
-        >
-          <Codepen />
-        </a>
-      )
-    }
-  </span>
+  </header>
+  <h4 class='title'>
+    {title}
+  </h4>
+  <p class='parrafo'>
+    {body}
+  </p>
+  <footer class='toolsContainer'>
+    <section class='tools'>
+      {
+        tools.map((e) => {
+          return (
+            <span class='toolSvg'>
+              {e === 'NextJS' ? (
+                <Next />
+              ) : e === 'CSS' ? (
+                <Css3 />
+              ) : e === 'GoogleAPI' ? (
+                <Google />
+              ) : e === 'ReactJS' ? (
+                <React />
+              ) : e === 'Tailwind' ? (
+                <Tailwind />
+              ) : e === 'Astro' ? (
+                <Astrosvg />
+              ) : e === 'NodeJS' ? (
+                <Node />
+              ) : e === 'MongoDB' ? (
+                <Monbodb />
+              ) : e === 'HTML' ? (
+                <Html5 />
+              ) : e === 'TypeScript' ? (
+                <Typescript />
+              ) : (
+                ''
+              )}
+            </span>
+          )
+        })
+      }
+    </section>
+    <section class='svglinkContainer'>
+      <a
+        class='svglink'
+        href={deploy}
+        target='_blank'
+        rel='noreferrer noopener'
+        aria-label='link a demo'
+        ><LinkEx height='26' width='26' />
+      </a>
+      {
+        href.includes('github') ? (
+          <a
+            class='svglink'
+            href={href}
+            target='_blank'
+            rel='noreferrer noopener'
+            aria-label='link a github'
+          >
+            <Github height='24' width='24' />
+          </a>
+        ) : (
+          <a
+            class='svglinkCodepen'
+            href={href}
+            target='_blank'
+            rel='noreferrer noopener'
+            aria-label='link a codepen'
+          >
+            <Codepen />
+          </a>
+        )
+      }
+    </section>
+  </footer>
 </article>
 
 <style>
@@ -114,63 +121,68 @@ import Typescript from './svg/typescript.astro'
   .cardContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    background-color: #000000;
-    width: 320px;
-    height: 420px;
-    border-radius: 6px;
+    background-color: #151515;
+    width: 350px;
+    height: 460px;
     box-sizing: border-box;
   }
-  .cardContainer .imgContainer {
+  .imgContainer {
     position: relative;
-    height: 163px;
-    width: 320px;
+    height: 178px;
+    width: 350px;
     overflow: hidden;
   }
   .title {
-    text-align: center;
-    background-color: var(--color-primary);
+    text-align: left;
     border-radius: 6px 6px 0 0;
-    font-weight: 400;
-    color: #fff;
-    padding: 10px;
+    font-weight: 600;
+    color: #ff6dae;
+    padding: 14px 24px 0 24px;
     box-sizing: border-box;
     width: 100%;
     font-size: 1.1rem;
   }
   .parrafo {
-    width: 320px;
+    width: 100%;
     padding: 24px;
     box-sizing: border-box;
     font-size: 1rem;
-    height: 120px;
+    height: 140px;
     color: #fff;
   }
   .imgProject {
-    width: 320px;
-    height: 163px;
+    width: 350px;
+    height: 178px;
+  }
+  .toolsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 86px;
+    width: 100%;
   }
   .tools {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     gap: 14px;
-    font-size: 12px;
-    padding-left: 20px;
-    width: 320px;
+    padding: 8px 24px;
+    width: 100%;
     box-sizing: border-box;
     color: #fff;
-    padding: 16px 0 0 24px;
   }
   .svglinkContainer {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
     align-items: center;
-    width: 320px;
-    padding: 0px 20px 0px 0px;
+    gap: 14px;
+    width: 100%;
+    padding: 0px 24px;
+    padding-bottom: 20px;
     box-sizing: border-box;
-    text-align: right;
   }
   .svglink {
     display: flex;

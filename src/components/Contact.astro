@@ -5,29 +5,31 @@
     action='https://formsubmit.co/9b24781c4d009f5506cdaed5a07315e6'
     method='POST'
   >
+    <label for='name'>Nombre:</label>
     <input
       class='input'
       type='text'
       name='name'
-      placeholder='Nombre'
+      id='name'
+      placeholder='Ej: John Doe'
       required
-      onfocus="this.placeholder=''"
     />
+    <label for='email'>Correo:</label>
     <input
       class='input'
       type='email'
       name='email'
-      placeholder='Email'
+      id='email'
+      placeholder='Ej: john@doe.com'
       required
-      onfocus="this.placeholder=''"
     />
+    <label for='comments'>Mensaje:</label>
     <textarea
-      class='textarea'
       name='comments'
+      id='comments'
       rows='12'
       placeholder='Escribe tu mensaje.'
-      required
-      onfocus="this.placeholder=''"></textarea>
+      required></textarea>
     <input type='hidden' name='_next' value='https://hugoavila.vercel.app/' />
     <input type='hidden' name='_template' value='box' />
     <button class='button' type='submit'>
@@ -63,10 +65,20 @@
     max-width: 100%;
   }
   .form {
-    max-width: 710px;
-    padding: 0px 40px 0 20px;
+    max-width: 780px;
+    padding: 0px 44px 0 10px;
   }
-  .input {
+  label {
+    width: 100%;
+    font-size: 18px;
+    color: var(--color-text-base);
+  }
+  label,
+  input,
+  textarea {
+    font-family: 'Roboto Mono', sans-serif;
+  }
+  input {
     background-color: var(--color-bg);
     outline: none;
     border: 2px solid var(--color-primary);
@@ -75,19 +87,16 @@
     padding: 12px 14px;
     color: var(--color-text-base);
     font-size: 1rem;
+    margin-top: 10px;
     margin-bottom: 20px;
-    font-family: 'Roboto Mono', sans-serif;
   }
-  .input::placeholder {
-    color: var(--color-text-base);
+  input::placeholder {
+    color: #959595;
   }
-  .input:active {
+  input:active {
     background-color: rgba(255, 255, 255, 0.165);
   }
-  label {
-    color: var(--color-text-base);
-  }
-  .textarea {
+  textarea {
     background-color: var(--color-bg);
     color: var(--color-text-base);
     font-size: 1rem;
@@ -96,10 +105,11 @@
     border: 2px solid var(--color-primary);
     border-radius: 6px;
     padding: 14px;
-    font-family: 'Roboto Mono', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
-  .textarea::placeholder {
-    color: var(--color-text-base);
+  textarea::placeholder {
+    color: #959595;
   }
   .button {
     display: flex;
@@ -127,10 +137,5 @@
     border: 2px solid var(--color-btn-border-hover);
     fill: none;
     stroke: var(--color-primary);
-  }
-  label {
-    width: 100%;
-    font-size: 18px;
-    padding: 6px;
   }
 </style>
