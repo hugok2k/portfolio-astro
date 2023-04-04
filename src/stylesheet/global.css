@@ -51,6 +51,7 @@ body {
   align-items: center;
   background-color: var(--color-bg);
   margin: 0;
+  color: var(--color-text-base);
 }
 a {
   text-decoration: none;
