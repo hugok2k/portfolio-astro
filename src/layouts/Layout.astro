@@ -1,7 +1,8 @@
 ---
 const {
   title = 'Hugo Avila Dev',
-  description = 'Porfolio Hugo Avila - Desarrollador Frontend/Fullstack'
+  description = 'Porfolio Hugo Avila - Desarrollador Frontend/Fullstack',
+  ogurl = 'https://hugoavila.vercel.app/images/og.webp'
 } = Astro.props
 ---
 
@@ -13,15 +14,20 @@ const {
     <meta name='description' content={description} />
     <link rel='icon' type='image/svg+xml' href='/ha.svg' />
     <meta name='generator' content={Astro.generator} />
-    <meta property='og:site_name' content={description} />
+    <!-- Facebook Meta Tags -->
     <meta property='og:url' content='https://hugoavila.vercel.app/' />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta
-      property='og:image'
-      content='https://hugoavila.vercel.app/images/og.jpg'
-    />
+    <meta property='og:image' content={ogurl} />
+    <meta property='og:site_name' content={description} />
+    <!-- Twitter Meta Tags -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='twitter:domain' content='hugoavila.vercel.app' />
+    <meta property='twitter:url' content='https://hugoavila.vercel.app/' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogurl} />
   </head>
   <body>
     <slot />
