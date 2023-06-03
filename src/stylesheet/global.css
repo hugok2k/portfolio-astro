@@ -2,47 +2,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 [data-theme='light'] {
-  --color-text-base: hsl(0, 0%, 11%);
-  --color-primary: hsl(333, 71%, 51%);
-  --color-secondary: hsl(84, 100%, 59%);
-  --color-bg: hsl(60, 2%, 89%);
-  --color-bg-footer: hsl(0, 0%, 100%);
-  --color-svg: hsl(0, 0%, 11%);
-  --color-licence: hsl(333, 100%, 34%);
-  --color-btn-bg: hsl(333, 71%, 51%);
-  --color-btn-hover: hsl(60, 2%, 89%);
-  --color-btn-border: hsl(333, 71%, 51%);
-  --color-btn-border-hover: hsl(333, 71%, 51%);
-  --color-btn-text: hsl(0, 0%, 100%);
+  --color-text-base: #1c1c1c;
+  --color-primary: #db2979;
+  --color-secondary: #abff2e;
+  --color-bg: #e4e4e2;
+  --color-bg-footer: #ffffff;
+  --color-svg: #1c1c1c;
+  --color-licence: #ad004e;
+  --color-btn-bg: #db2979;
+  --color-btn-hover: #ededed;
+  --color-btn-border: #db2979;
+  --color-btn-border-hover: #db2979;
+  --color-btn-text: #ffffff;
+  --color-bg-card: #ffffff;
 }
+
 [data-theme='dark'] {
-  --color-text-base: hsl(60, 2%, 89%);
-  --color-primary: hsl(333, 71%, 51%);
-  --color-secondary: hsl(84, 100%, 59%);
-  --color-bg: hsl(0, 0%, 11%);
-  --color-bg-footer: hsl(0, 0%, 4%);
-  --color-svg: hsl(60, 2%, 89%);
-  --color-licence: hsl(333, 64%, 55%);
-  --color-btn-bg: hsl(333, 71%, 51%);
-  --color-btn-hover: hsl(60, 2%, 89%);
-  --color-btn-border: hsl(333, 71%, 51%);
-  --color-btn-border-hover: hsl(60, 2%, 89%);
-  --color-btn-text: hsl(0, 0%, 100%);
+  --color-text-base: #e4e4e2;
+  --color-primary: #db2979;
+  --color-secondary: #abff2e;
+  --color-bg: #1c1c1c;
+  --color-bg-footer: #0a0a0a;
+  --color-svg: #e4e4e2;
+  --color-licence: #d64385;
+  --color-btn-bg: #db2979;
+  --color-btn-hover: #e4e4e2;
+  --color-btn-border: #db2979;
+  --color-btn-border-hover: #e4e4e2;
+  --color-btn-text: #ffffff;
+  --color-bg-card: #151515;
 }
 
 :root {
   color-scheme: dark;
 }
+
 * {
   margin: 0;
   padding: 0;
   transition: background-color 0.6s;
 }
+
 html {
   font-family: 'Roboto Mono', sans-serif;
-  color: var(--color-text-base);
   scroll-behavior: smooth;
 }
+
 body {
   font-size: 16px;
   display: flex;
@@ -53,6 +58,7 @@ body {
   margin: 0;
   color: var(--color-text-base);
 }
+
 a {
   text-decoration: none;
 }
