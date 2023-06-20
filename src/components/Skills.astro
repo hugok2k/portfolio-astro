@@ -3,8 +3,6 @@ import Astrosvg from './svg/astrosvg.astro'
 import Postgres from './svg/postgres.astro'
 import Javascript from '../components/svg/javascript.astro'
 import React from './svg/react.astro'
-import Html5 from './svg/html5.astro'
-import Css3 from './svg/css3.astro'
 import Node from './svg/node.astro'
 import Redux from './svg/redux.astro'
 import Typescript from './svg/typescript.astro'
@@ -41,14 +39,14 @@ import Monbodb from './svg/monbodb.astro'
       <span>NodeJS</span>
     </div>
     <div class='skillIconContainer'>
-      <Postgres />
-      <span>PostgreSQL</span>
-    </div>
-    <div class='skillIconContainer'>
       <div class='fixSvgTailwind'>
         <Tailwind />
       </div>
       <span>Tailwind</span>
+    </div>
+    <div class='skillIconContainer'>
+      <Postgres />
+      <span>PostgreSQL</span>
     </div>
     <div class='skillIconContainer'>
       <Monbodb />
@@ -68,14 +66,14 @@ import Monbodb from './svg/monbodb.astro'
     justify-content: center;
     align-items: center;
     margin-top: 120px;
+    padding: 0 20px;
   }
   .iconContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 44px;
     max-width: 820px;
-    padding: 0 20px;
     box-sizing: border-box;
   }
   .skillIconContainer {
