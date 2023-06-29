@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 [data-theme='light'] {
   --color-text-base: #1c1c1c;
@@ -44,7 +43,7 @@
 }
 
 html {
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Roboto Mono Variable', sans-serif;
   scroll-behavior: smooth;
 }
 
