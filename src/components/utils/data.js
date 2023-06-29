@@ -1,6 +1,14 @@
 export const data = [
   {
     href: 'https://github.com/hugok2k/',
+    title: 'Psinfronteras',
+    body: 'Sitio web de psicología y psicoterapia online. Landing page para campaña de Google Ads.',
+    image: '/images/psinfronteras.webp',
+    tools: ['Astro', 'Tailwind'],
+    deploy: 'https://psinfrontera-landing.vercel.app/'
+  },
+  {
+    href: 'https://github.com/hugok2k/',
     title: 'Active Rent a Car',
     body: 'Sitio web de alquiler de automóviles con calendario de reserva. El usuario puede agregar, modificar o eliminar vehículos.',
     image: '/images/active.webp',
