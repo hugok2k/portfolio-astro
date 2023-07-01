@@ -5,7 +5,7 @@ export const data = [
     body: 'Sitio web de psicología y psicoterapia online. Landing page para campaña de Google Ads.',
     image: '/images/psinfronteras.webp',
     tools: ['Astro', 'Tailwind'],
-    deploy: 'https://psinfrontera-landing.vercel.app/'
+    deploy: 'https://www.psinfrontera.com/'
   },
   {
     href: 'https://github.com/hugok2k/',
