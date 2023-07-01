@@ -1,0 +1,118 @@
+---
+const {
+  title = 'Hugo Avila Dev',
+  description = 'Porfolio Hugo Avila - Desarrollador Frontend/Fullstack',
+  ogurl = 'https://hugoavila.vercel.app/images/og.webp'
+} = Astro.props
+---
+
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <link rel='icon' type='image/svg+xml' href='/ha.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <!-- Facebook Meta Tags -->
+    <meta property='og:url' content='https://hugoavila.vercel.app/' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogurl} />
+    <meta property='og:site_name' content={description} />
+    <!-- Twitter Meta Tags -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='twitter:domain' content='hugoavila.vercel.app' />
+    <meta property='twitter:url' content='https://hugoavila.vercel.app/' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogurl} />
+  </head>
+  <main class='container'>
+    <h1>Error 404</h1>
+    <h2>¡Página no encontrada!</h2>
+    <div class='svgContainer'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        xml:space='preserve'
+        width='120'
+        height='120'
+        viewBox='0 0 512.001 512.001'
+        ><circle cx='256.004' cy='256.004' r='246.855' style='fill:#f7b239'
+        ></circle><path
+          d='M126.306 385.694c-88.801-88.802-95.798-228.426-20.998-325.241A249.063 249.063 0 0 0 81.45 81.452c-96.401 96.401-96.401 252.698 0 349.099s252.698 96.401 349.099 0a249.34 249.34 0 0 0 20.999-23.858c-96.815 74.799-236.44 67.802-325.242-20.999z'
+          style='fill:#e09b2d'></path><path
+          d='M297.481 349.115h-85.403c-5.054 0-9.15-4.097-9.15-9.15s4.095-9.15 9.15-9.15h85.403a9.15 9.15 0 1 1 0 18.3z'
+          style='fill:#e09b2d'></path><path
+          d='M256.001 0C114.841 0 0 114.841 0 256.001s114.841 256.001 256.001 256.001 256-114.842 256-256.001S397.16 0 256.001 0zm0 493.701c-131.069 0-237.702-106.631-237.702-237.7S124.932 18.299 256.001 18.299s237.702 106.632 237.702 237.702-106.635 237.7-237.702 237.7z'
+        ></path><path
+          d='M371.284 296.658H138.275c-5.054 0-9.15 4.097-9.15 9.15s4.095 9.15 9.15 9.15h233.008a9.15 9.15 0 0 0 9.15-9.15 9.149 9.149 0 0 0-9.149-9.15zM180.577 226.834c0-18.666-15.186-33.852-33.852-33.852s-33.852 15.186-33.852 33.852 15.186 33.852 33.852 33.852 33.852-15.185 33.852-33.852zM365.275 192.982c-18.666 0-33.852 15.186-33.852 33.852s15.186 33.852 33.852 33.852 33.852-15.186 33.852-33.852-15.185-33.852-33.852-33.852z'
+        ></path><circle cx='155.969' cy='219.735' r='9.15' style='fill:#fff'
+        ></circle><circle cx='374.338' cy='219.735' r='9.15' style='fill:#fff'
+        ></circle></svg
+      >
+    </div>
+    <div class='volver'>
+      <p>Prueba volver al inicio.</p>
+      <a class='boton' href='/'>Volver</a>
+    </div>
+  </main>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      font-family: 'Roboto Mono Variable', sans-serif;
+      color: #fff;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .volver {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    .boton {
+      color: #fff;
+      background-color: #db2979;
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 30px;
+      font-weight: 600;
+      transition: all 0.3s linear;
+      text-decoration: none;
+    }
+    .boton:hover {
+      background-color: #fff;
+      color: #db2979;
+    }
+    .svgContainer {
+      margin: 40px 0;
+    }
+  </style>
+
+
+</html>
