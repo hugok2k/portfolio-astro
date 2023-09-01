@@ -49,7 +49,8 @@ import Typescript from './svg/typescript.astro'
       {
         tools.map((e) => {
           return (
-            <span class='toolSvg'>
+            <div class='toolSvg tooltip'>
+              <span class='tooltiptext'>{e}</span>
               {e === 'NextJS' ? (
                 <Next />
               ) : e === 'CSS' ? (
@@ -73,7 +74,7 @@ import Typescript from './svg/typescript.astro'
               ) : (
                 ''
               )}
-            </span>
+            </div>
           )
         })
       }
@@ -237,5 +238,45 @@ import Typescript from './svg/typescript.astro'
     justify-content: center;
     align-items: center;
     width: 24px;
+    height: 29px;
+    position: relative;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    top: -6px;
+    left: 45%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: var(--color-primary) transparent transparent transparent;
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  .tooltip .tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    width: 84px;
+    background-color: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 34px;
+    left: -30px;
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 12px;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
   }
 </style>
