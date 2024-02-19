@@ -13,7 +13,7 @@ export const data = [
     body: 'Sitio web de alquiler de automóviles con calendario de reserva. El usuario puede agregar, modificar o eliminar vehículos.',
     image: '/images/active.webp',
     tools: ['NextJS', 'TypeScript', 'CSS', 'GoogleAPI'],
-    deploy: 'https://www.activerentacar.com.ar/'
+    deploy: 'https://active-rentacar.vercel.app/'
   },
   {
     href: 'https://github.com/hugok2k/cloudinary-hackaton',
@@ -29,7 +29,7 @@ export const data = [
     body: 'Sitio web de alquiler de automóviles con calendario de reserva. El usuario puede agregar, modificar o eliminar vehículos.',
     image: '/images/123autorental.webp',
     tools: ['NextJS', 'CSS', 'GoogleAPI'],
-    deploy: 'https://www.123autorental.com.ar/'
+    deploy: 'https://123autorental.vercel.app/'
   },
   {
     href: 'https://github.com/hugok2k/qrcode-generator',
