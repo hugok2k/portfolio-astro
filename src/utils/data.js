@@ -37,7 +37,7 @@ export const data = [
     body: 'Generador de código QR con posibilidad de descargarlo en formato PNG',
     image: '/images/qr-gen.webp',
     tools: ['ReactJS', 'Tailwind'],
-    deploy: 'https://qrcode-k2k.vercel.app/'
+    deploy: 'https://qrcode-generator2024.vercel.app/'
   },
   {
     href: 'https://github.com/hugok2k/hacktoberfest-2022',
