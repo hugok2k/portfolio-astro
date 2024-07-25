@@ -12,20 +12,21 @@
     "stylelint-check": "stylelint-config-prettier-check"
   },
   "dependencies": {
-    "@fontsource-variable/roboto-mono": "^5.0.14",
-    "astro": "^3.3.2",
+    "@fontsource-variable/roboto-mono": "^5.0.19",
+    "@typescript-eslint/parser": "^7.17.0",
+    "astro": "^4.12.2",
     "standard": "^17.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.51.0",
+    "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-astro": "^0.29.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-astro": "^1.2.3",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
     "stylelint-config-prettier": "^9.0.5"
   },
   "pnpm": {
     "overrides": {
-      "zod": "3.22.3"
+      "zod": "3.23.8"
     }
   }
 }
