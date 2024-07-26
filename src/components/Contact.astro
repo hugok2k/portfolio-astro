@@ -1,109 +1,111 @@
-<h3 class='subtitle contact' id='contact'>Contacto</h3>
-<section class='formContainer'>
-  <form class='form' action='https://formspree.io/f/xblrdelg' method='POST'>
+<h3 class='subtitle mt-10' id='contact'>Contacto</h3>
+<section class='flex justify-center items-center w-full' id='formBlock'>
+  <form id='someForm' class='flex flex-col w-full max-w-[840px] px-8 gap-2'>
     <label for='name'>Nombre:</label>
-    <input class='input' type='text' name='name' id='name' placeholder='Ej: John Doe' required />
+    <input
+      class='bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]'
+      type='text'
+      name='name'
+      id='name'
+      placeholder='Ej: John Doe'
+      required
+    />
     <label for='email'>Correo:</label>
-    <input class='input' type='email' name='email' id='email' placeholder='Ej: john@doe.com' required />
+    <input
+      class='bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]'
+      type='email'
+      name='email'
+      id='email'
+      placeholder='Ej: john@doe.com'
+      required
+    />
     <label for='comments'>Mensaje:</label>
-    <textarea name='comments' id='comments' rows='12' placeholder='Escribe tu mensaje.' required></textarea>
+    <textarea
+      name='comments'
+      id='comments'
+      rows='12'
+      placeholder='Escribe tu mensaje.'
+      required
+      class='bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]'
+    ></textarea>
+    <input type='hidden' name='_next' value='https://hugoavila.dev/gracias' />
     <button
-      class='text-white bg-[--color-primary] py-2 px-5 rounded mt-7 font-semibold transition-colors duration-300 hover:bg-[--color-btn-hover] hover:text-[--color-primary] stroke-white fill-none flex gap-2 hover:stroke-[--color-primary] border-2 border-[--color-btn-bg] hover:border-[--color-btn-border-hover]'
+      class='g-recaptcha flex justify-center items-center gap-2 max-w-36 text-white bg-[--color-primary] py-2 px-5 rounded mt-7 font-semibold transition-colors duration-300 hover:bg-[--color-btn-hover] hover:text-[--color-primary] stroke-white fill-none hover:stroke-[--color-primary] border-2 border-[--color-btn-bg] hover:border-[--color-btn-border-hover]'
       type='submit'
+      data-sitekey='6LcYdhgqAAAAANkyhyTCOIuT7ktWcmW-v272baSb'
+      data-callback='onSubmit'
+      data-action='submit'
     >
-      <svg width='24px' height='24px' viewBox='0 0 24 24' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'>
+      <svg width='20px' height='20px' viewBox='0 0 24 24' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'>
         <path d='M22.152 3.553L11.178 21.004l-1.67-8.596L2 7.898l20.152-4.345zM9.456 12.444l12.696-8.89'></path>
         <defs><clipPath id='send-diagonal_svg__clip0_2476_13290'><path d='M0 0h24v24H0z'></path></clipPath></defs>
       </svg> Enviar</button
     >
   </form>
 </section>
+<div id='thankyouBlock' class='flex-col justify-center items-center min-h-96 hidden'>
+  <h1 class='text-3xl'>Gracias por tu mensaje</h1>
+  <p>Me pondré en contacto contigo lo antes posible</p>
+  <div class='text-[--color-primary] animate-pulse mt-4'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      class='size-8'
+    >
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'></path>
+    </svg>
+  </div>
+</div>
 
 <style>
-  .contact {
-    margin-top: 40px;
-  }
-  .textColor {
-    color: var(--color-text-base);
-  }
-  .formContainer {
-    color: #fff;
-    max-width: 100%;
-  }
-  .form {
-    max-width: 780px;
-    padding: 0px 44px 0 10px;
-  }
   label {
-    width: 100%;
     font-size: 18px;
     color: var(--color-text-base);
   }
-  label,
-  input,
-  textarea,
-  button,
-  form {
-    font-family: 'Roboto Mono', sans-serif;
-  }
-  input {
-    background-color: var(--color-bg);
-    outline: none;
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
-    width: 100%;
-    padding: 12px 14px;
-    color: var(--color-text-base);
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  input::placeholder {
-    color: #959595;
-  }
-  input:active {
-    background-color: rgba(255, 255, 255, 0.165);
-  }
-  textarea {
-    background-color: var(--color-bg);
-    color: var(--color-text-base);
-    font-size: 1rem;
-    width: 100%;
-    outline: none;
-    border: 2px solid var(--color-primary);
-    border-radius: 6px;
-    padding: 14px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  textarea::placeholder {
-    color: #959595;
-  }
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    background-color: var(--color-btn-bg);
-    color: var(--color-btn-text);
-    padding: 10px 16px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 30px;
-    font-weight: 600;
-    transition: all 0.3s linear;
-    border: 2px solid var(--color-btn-bg);
-    fill: none;
-    stroke: #fff;
+</style>
+
+<script>
+  function onSubmit(token) {
+    document.getElementById('someForm').submit()
   }
 
-  .button:hover {
-    background-color: var(--color-btn-hover);
-    color: var(--color-primary);
-    transition: all 0.3s linear;
-    border: 2px solid var(--color-btn-border-hover);
-    fill: none;
-    stroke: var(--color-primary);
-  }
-</style>
+  document.getElementById('someForm').addEventListener('submit', function (e) {
+    e.preventDefault()
+
+    grecaptcha.execute('6LcYdhgqAAAAANkyhyTCOIuT7ktWcmW-v272baSb', { action: 'submit' }).then(function (token) {
+      const formData = new FormData(e.target)
+      formData.append('g-recaptcha-response', token)
+
+      const requestOptions = {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      }
+
+      fetch('https://formspree.io/f/xblrdelg', requestOptions)
+        .then((response) => {
+          if (response.ok) {
+            return response.json()
+          } else {
+            throw new Error('Something went wrong')
+          }
+        })
+        .then((data) => {
+          console.log('Success:', data)
+          document.getElementById('formBlock').style.display = 'none'
+          document.getElementById('thankyouBlock').style.display = 'flex'
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        })
+    })
+  })
+</script>

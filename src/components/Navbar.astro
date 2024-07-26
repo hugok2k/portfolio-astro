@@ -216,12 +216,13 @@ import Moon from './svg/moon.astro'
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }
-  mode.addEventListener('click', () => {
-    let toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
-    setMode(toggleTheme)
-  })
+  if (mode !== null) {
+    mode.addEventListener('click', () => {
+      const toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+      setMode(toggleTheme)
+    })
+  }
   setMode(localStorage.getItem('theme') || 'dark') // default dark mode. Other option, use preferenceOS.
-
   // Easter egg :)
   let count = 0
   const harryPotterLumos = ['l', 'u', 'm', 'o', 's']
