@@ -1,6 +1,11 @@
 <h3 class='subtitle mt-10' id='contact'>Contacto</h3>
 <section class='flex justify-center items-center w-full' id='formBlock'>
-  <form id='someForm' class='flex flex-col w-full max-w-[840px] px-8 gap-2'>
+  <form
+    id='someForm'
+    class='flex flex-col w-full max-w-[840px] px-8 gap-2'
+    action='https://formspree.io/f/xblrdelg'
+    method='POST'
+  >
     <label for='name'>Nombre:</label>
     <input
       class='bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]'
@@ -71,41 +76,32 @@
 </style>
 
 <script>
-  function onSubmit(token) {
-    document.getElementById('someForm').submit()
-  }
-
   document.getElementById('someForm').addEventListener('submit', function (e) {
     e.preventDefault()
-
-    grecaptcha.execute('6LcYdhgqAAAAANkyhyTCOIuT7ktWcmW-v272baSb', { action: 'submit' }).then(function (token) {
-      const formData = new FormData(e.target)
-      formData.append('g-recaptcha-response', token)
-
-      const requestOptions = {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Accept: 'application/json'
-        }
+    const formData = new FormData(this)
+    const requestOptions = {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json'
       }
+    }
 
-      fetch('https://formspree.io/f/xblrdelg', requestOptions)
-        .then((response) => {
-          if (response.ok) {
-            return response.json()
-          } else {
-            throw new Error('Something went wrong')
-          }
-        })
-        .then((data) => {
-          console.log('Success:', data)
-          document.getElementById('formBlock').style.display = 'none'
-          document.getElementById('thankyouBlock').style.display = 'flex'
-        })
-        .catch((error) => {
-          console.error('Error:', error)
-        })
-    })
+    fetch('https://formspree.io/f/xblrdelg', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error('Something went wrong')
+        }
+      })
+      .then((data) => {
+        console.log('Success:', data)
+        document.getElementById('formBlock').style.display = 'none'
+        document.getElementById('thankyouBlock').style.display = 'flex'
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
   })
 </script>
