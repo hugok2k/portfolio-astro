@@ -1,8 +1,13 @@
 ---
+import Footer from '../components/Footer.astro'
+import Navbar from '../components/Navbar.astro'
+import '../stylesheet/global.css'
+import '@fontsource-variable/roboto-mono'
+
 const {
   title = 'Hugo Avila Dev',
   description = 'Porfolio Hugo Avila - Desarrollador Frontend/Fullstack',
-  ogurl = 'https://hugoavila.vercel.app/images/og.webp'
+  ogurl = 'https://hugoavila.dev/images/og.webp'
 } = Astro.props
 ---
 
@@ -15,7 +20,7 @@ const {
     <link rel='icon' type='image/svg+xml' href='/ha.svg' />
     <meta name='generator' content={Astro.generator} />
     <!-- Facebook Meta Tags -->
-    <meta property='og:url' content='https://hugoavila.vercel.app/' />
+    <meta property='og:url' content='https://hugoavila.dev/' />
     <meta property='og:type' content='website' />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
@@ -23,13 +28,25 @@ const {
     <meta property='og:site_name' content={description} />
     <!-- Twitter Meta Tags -->
     <meta name='twitter:card' content='summary_large_image' />
-    <meta property='twitter:domain' content='hugoavila.vercel.app' />
-    <meta property='twitter:url' content='https://hugoavila.vercel.app/' />
+    <meta property='twitter:domain' content='hugoavila.dev' />
+    <meta property='twitter:url' content='https://hugoavila.dev/' />
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={description} />
     <meta name='twitter:image' content={ogurl} />
   </head>
   <body>
+    <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+</style>

@@ -27,23 +27,11 @@ import Moon from './svg/moon.astro'
       <Menu />
     </span>
     <div class='menu' id='menu'>
-      <a class='btnNavbar' href='/#project' id='linkProject'>
-        .proyectos<span class='colorBra'>()</span></a
-      >
-      <a class='btnNavbar' href='/#skills' id='linkSkills'>
-        .habilidades<span class='colorBra'>()</span></a
-      >
-      <a class='btnNavbar' href='/#about' id='linkAbout'>
-        .sobre mí<span class='colorBra'>()</span></a
-      >
-      <a class='btnNavbar' href='/#contact' id='linkContact'>
-        .contacto<span class='colorBra'>()</span></a
-      >
-      <button
-        class='usermode'
-        title='darkmode'
-        aria-label='Cambiar a modo oscuro o claro.'
-      >
+      <a class='btnNavbar' href='/#project' id='linkProject'> .proyectos<span class='colorBra'>()</span></a>
+      <a class='btnNavbar' href='/#skills' id='linkSkills'> .habilidades<span class='colorBra'>()</span></a>
+      <a class='btnNavbar' href='/#about' id='linkAbout'> .sobre mí<span class='colorBra'>()</span></a>
+      <a class='btnNavbar' href='/#contact' id='linkContact'> .contacto<span class='colorBra'>()</span></a>
+      <button class='usermode' title='darkmode' aria-label='Cambiar a modo oscuro o claro.'>
         <span class='moon'><Moon /></span>
       </button>
     </div>
@@ -109,7 +97,7 @@ import Moon from './svg/moon.astro'
   .textLogo {
     width: 40px;
     height: 40px;
-    fill: #fff;
+    fill: var(--color-text-base);
     transition: fill 0.3s;
   }
   .textLogo:hover {
@@ -192,6 +180,16 @@ import Moon from './svg/moon.astro'
   const linkSkills = document.querySelector('#linkSkills')
   const linkProject = document.querySelector('#linkProject')
   const linkContact = document.querySelector('#linkContact')
+  if (
+    navToggle === null ||
+    navMenu === null ||
+    linkAbout === null ||
+    linkSkills === null ||
+    linkProject === null ||
+    linkContact === null
+  ) {
+    throw new Error('No se encontró el botón de menú o el menú')
+  }
   navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('menuOn')
   })
@@ -219,8 +217,7 @@ import Moon from './svg/moon.astro'
     localStorage.setItem('theme', theme)
   }
   mode.addEventListener('click', () => {
-    let toggleTheme =
-      localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+    let toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
     setMode(toggleTheme)
   })
   setMode(localStorage.getItem('theme') || 'dark') // default dark mode. Other option, use preferenceOS.

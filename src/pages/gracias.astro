@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '@fontsource-variable/roboto-mono'
+---
+
+<Layout>
+  <main class='flex flex-col justify-center items-center m-0 h-screen w-full max-w-[880px]'>
+    <h1 class='text-3xl'>Gracias por tu mensaje</h1>
+    <p>Me pondré en contacto contigo lo antes posible</p>
+    <div class='text-green-700 animate-pulse mt-4'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke-width='1.5'
+        stroke='currentColor'
+        class='size-8'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'></path>
+      </svg>
+    </div>
+    <a
+      class='text-white bg-[--color-primary] py-2 px-5 rounded mt-7 font-semibold transition-colors duration-300 hover:bg-[--color-btn-hover] hover:text-[--color-primary] border-2 border-[--color-btn-bg] hover:border-[--color-btn-border-hover]'
+      href='/'>Volver</a
+    >
+  </main>
+</Layout>

@@ -3,7 +3,7 @@
   --color-primary: #db2979;
   --color-secondary: #abff2e;
   --color-bg: #e4e4e2;
-  --color-bg-footer: #ffffff;
+  --color-bg-footer: #e4e4e2;
   --color-svg: #1c1c1c;
   --color-licence: #ad004e;
   --color-btn-bg: #db2979;
@@ -19,7 +19,7 @@
   --color-primary: #db2979;
   --color-secondary: #abff2e;
   --color-bg: #1c1c1c;
-  --color-bg-footer: #0a0a0a;
+  --color-bg-footer: #1c1c1c;
   --color-svg: #e4e4e2;
   --color-licence: #d64385;
   --color-btn-bg: #db2979;
@@ -37,7 +37,7 @@
 * {
   margin: 0;
   padding: 0;
-  transition: background-color 0.6s;
+  transition: background-color 0.3s;
 }
 
 html {
@@ -52,8 +52,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--color-bg);
-  margin: 0;
   color: var(--color-text-base);
+  margin: 0;
 }
 
 a {
