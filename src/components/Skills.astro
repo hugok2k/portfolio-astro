@@ -4,78 +4,57 @@ import Postgres from './svg/postgres.astro'
 import Javascript from '../components/svg/javascript.astro'
 import React from './svg/react.astro'
 import Node from './svg/node.astro'
-import Redux from './svg/redux.astro'
 import Typescript from './svg/typescript.astro'
 import Next from './svg/next.astro'
 import Tailwind from './svg/tailwind.astro'
 import Mongodb from './svg/mongodb.astro'
 ---
 
-<section class='section-container'>
-  <h3 class='subtitle' id='skills'>Habilidades</h3>
-  <div class='iconContainer'>
-    <div class='skillIconContainer'>
+<section class="flex flex-col justify-center items-center mt-28 px-4">
+  <h3 class="subtitle" id="skills">Habilidades</h3>
+  <div class="flex flex-wrap justify-center gap-12 max-w-[840px] box-border">
+    <div class="skillIconContainer">
       <Javascript />
       <span>JavaScript</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Typescript />
-      <span>Typescript</span>
+      <span>TypeScript</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Next />
       <span>NextJS</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <React />
       <span>ReactJS</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Astrosvg />
       <span>Astro</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Node />
       <span>NodeJS</span>
     </div>
-    <div class='skillIconContainer'>
-      <div class='fixSvgTailwind'>
+    <div class="skillIconContainer">
+      <div class="fixSvgTailwind">
         <Tailwind />
       </div>
       <span>Tailwind</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Postgres />
       <span>PostgreSQL</span>
     </div>
-    <div class='skillIconContainer'>
+    <div class="skillIconContainer">
       <Mongodb />
       <span>MongoDB</span>
-    </div>
-    <div class='skillIconContainer'>
-      <Redux />
-      <span>Redux</span>
     </div>
   </div>
 </section>
 
 <style>
-  .section-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 120px;
-    padding: 0 20px;
-  }
-  .iconContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 44px;
-    max-width: 820px;
-    box-sizing: border-box;
-  }
   .skillIconContainer {
     display: flex;
     flex-direction: column;

@@ -3,8 +3,8 @@ import Menu from './svg/menu.astro'
 import Moon from './svg/moon.astro'
 ---
 
-<header class="headerContainer">
-  <nav class="nav">
+<header class="fixed bg-[--color-bg] w-full top-0 left-0 z-[1]">
+  <nav class="flex justify-between items-center px-4 py-2 max-w-[840px] m-auto">
     <a class="textLogo" href="/#" aria-label="Volver al inicio">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
         <path
@@ -31,56 +31,19 @@ import Moon from './svg/moon.astro'
       <a class="btnNavbar" href="/#skills" id="linkSkills"> .habilidades<span class="colorBra">()</span></a>
       <a class="btnNavbar" href="/#about" id="linkAbout"> .sobre mí<span class="colorBra">()</span></a>
       <a class="btnNavbar" href="/#contact" id="linkContact"> .contacto<span class="colorBra">()</span></a>
-      <button class="usermode" title="darkmode" aria-label="Cambiar a modo oscuro o claro.">
-        <span class="moon"><Moon /></span>
+      <button
+        class="usermode size-5 bg-[--color-bg] border-none ml-6 my-auto"
+        title="darkmode"
+        aria-label="Cambiar a modo oscuro o claro."
+      >
+        <span class="relative fill-[--color-text-base] transition-colors duration-300 hover:fill-[--color-primary]"
+          ><Moon /></span
+        >
       </button>
     </div>
   </nav>
 </header>
 <style>
-  .usermode {
-    width: 20px;
-    height: 20px;
-    background-color: var(--color-bg);
-    border: none;
-    margin-left: 30px;
-  }
-  .moon {
-    position: relative;
-    fill: var(--color-text-base);
-    transition: fill 0.3s;
-    cursor: pointer;
-  }
-  .moon:hover {
-    fill: var(--color-primary);
-  }
-  .fa-bars {
-    color: var(--color-primary);
-    font-size: 30px;
-    padding: 0 10px 0 10px;
-    transition: all 0.3s linear;
-  }
-  .fa-bars:hover {
-    color: var(--color-secondary);
-    transition: all 0.3s linear;
-  }
-  .headerContainer {
-    position: fixed;
-    background-color: var(--color-bg);
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 32px 10px 26px;
-    font-weight: 600;
-    max-width: 820px;
-    margin: 0 auto;
-  }
   .colorBra {
     color: var(--color-primary);
     fill: var(--color-primary);
@@ -126,7 +89,7 @@ import Moon from './svg/moon.astro'
     color: #fff;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 782px) {
     .menu {
       flex-direction: column;
       position: fixed;
@@ -140,11 +103,6 @@ import Moon from './svg/moon.astro'
       font-size: 30px;
       background-color: var(--color-bg);
       transition: all 0.6s;
-    }
-    .usermode {
-      height: 40px;
-      width: 40px;
-      margin-top: 30px;
     }
     .btnNavbar {
       padding: 20px;
@@ -163,13 +121,6 @@ import Moon from './svg/moon.astro'
     .menuOff {
       left: 100%;
     }
-  }
-  a {
-    text-decoration: none;
-    color: var(--color-text-base);
-  }
-  a:visited {
-    color: var(--color-text-base);
   }
 </style>
 <script>

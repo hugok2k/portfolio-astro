@@ -3,41 +3,13 @@ import Card from './Card.astro'
 import { data } from '../utils/data.js'
 ---
 
-<section class='container-project'>
-  <h3 class='subtitle' id='project'>Proyectos</h3>
-  <article class='skillContainer'>
+<section class="flex flex-col justify-center items-center px-4">
+  <h3 class="subtitle" id="project">Proyectos</h3>
+  <article class="flex flex-wrap items-center justify-center gap-20 w-full max-w-[840px]">
     {
       data.map((e) => {
-        return (
-          <Card
-            href={e.href}
-            title={e.title}
-            body={e.body}
-            image={e.image}
-            tools={e.tools}
-            deploy={e.deploy}
-          />
-        )
+        return <Card href={e.href} title={e.title} body={e.body} image={e.image} tools={e.tools} deploy={e.deploy} />
       })
     }
   </article>
 </section>
-
-<style>
-  .container-project {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 500px;
-  }
-  .skillContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 90px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 820px;
-  }
-</style>

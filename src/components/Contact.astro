@@ -1,7 +1,7 @@
 <h3 class="subtitle mt-10" id="contact">Contacto</h3>
 <section class="flex justify-center items-center w-full" id="formBlock">
-  <form id="someForm" class="flex flex-col w-full max-w-[840px] px-8 gap-2">
-    <label for="name">Nombre:</label>
+  <form id="someForm" class="flex flex-col w-full max-w-[840px] gap-2 px-4">
+    <label for="name" class="text-[--color-text-base] text-lg">Nombre:</label>
     <input
       class="bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]"
       type="text"
@@ -10,7 +10,7 @@
       placeholder="Ej: John Doe"
       required
     />
-    <label for="email">Correo:</label>
+    <label for="email" class="text-[--color-text-base] text-lg">Correo:</label>
     <input
       class="bg-[--color-bg] w-full border-2 border-[--color-primary] rounded-md px-4 py-2 outline-none focus:border-[--color-text-base] transition-colors duration-300 text-[--color-text-base]"
       type="email"
@@ -19,7 +19,7 @@
       placeholder="Ej: john@doe.com"
       required
     />
-    <label for="comments">Mensaje:</label>
+    <label for="comments" class="text-[--color-text-base] text-lg">Mensaje:</label>
     <textarea
       name="comments"
       id="comments"
@@ -59,13 +59,6 @@
     </svg>
   </div>
 </div>
-
-<style>
-  label {
-    font-size: 18px;
-    color: var(--color-text-base);
-  }
-</style>
 
 <script>
   const someForm = document.getElementById('someForm')
