@@ -1,10 +1,10 @@
 ---
-import Menu from './svg/menu.astro'
-import Moon from './svg/moon.astro'
+import Menu from "./svg/menu.astro"
+import Moon from "./svg/moon.astro"
 ---
 
-<header class="fixed bg-[--color-bg] w-full top-0 left-0 z-[1]">
-  <nav class="flex justify-between items-center px-4 py-2 max-w-[840px] m-auto">
+<header class="fixed backdrop-blur-lg bg-[--color-header] w-full top-0 left-0 z-20">
+  <nav class="flex justify-between items-center py-2 px-6 md:px-4 max-w-5xl m-auto">
     <a class="textLogo" href="/#" aria-label="Volver al inicio">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
         <path
@@ -26,17 +26,25 @@ import Moon from './svg/moon.astro'
     <span class="navToggle">
       <Menu />
     </span>
-    <div class="menu" id="menu">
-      <a class="btnNavbar" href="/#project" id="linkProject"> .proyectos<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#skills" id="linkSkills"> .habilidades<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#about" id="linkAbout"> .sobre mí<span class="colorBra">()</span></a>
-      <a class="btnNavbar" href="/#contact" id="linkContact"> .contacto<span class="colorBra">()</span></a>
+    <div class="menu text-center md:text-left" id="menu">
+      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#project" id="linkProject">
+        .proyectos<span class="colorBra"> ()</span></a
+      >
+      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#skills" id="linkSkills">
+        .habilidades<span class="colorBra"> ()</span></a
+      >
+      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#about" id="linkAbout">
+        .sobre mí<span class="colorBra"> ()</span></a
+      >
+      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#contact" id="linkContact">
+        .contacto<span class="colorBra"> ()</span></a
+      >
       <button
-        class="usermode size-5 bg-[--color-bg] border-none ml-6 my-auto"
+        class="usermode bg-[--color-bg] md:bg-transparent border-none ml-6 my-auto w-full md:w-auto py-8 md:py-0 flex justify-center items-center"
         title="darkmode"
         aria-label="Cambiar a modo oscuro o claro."
       >
-        <span class="relative fill-[--color-text-base] transition-colors duration-300 hover:fill-[--color-primary]"
+        <span class="fill-[--color-text-base] transition-colors duration-300 hover:fill-[--color-primary] size-6 block"
           ><Moon /></span
         >
       </button>
@@ -72,30 +80,33 @@ import Moon from './svg/moon.astro'
   .menu {
     display: flex;
     flex-direction: row;
-    font-size: 18px;
+    justify-content: end;
+    font-size: 16px;
+    height: 100%;
+    width: 780px;
+    gap: 20px;
   }
   .btnNavbar {
-    margin-left: 20px;
-    padding-left: 8px;
-    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
     font-weight: 400;
     transition: color 0.3s;
   }
   .btnNavbar:hover {
-    margin-left: 20px;
     color: var(--color-primary);
   }
   .btnNavbar:hover .colorBra {
     color: #fff;
   }
 
-  @media (max-width: 782px) {
+  @media (max-width: 850px) {
     .menu {
       flex-direction: column;
-      position: fixed;
+      justify-content: start;
       align-items: center;
+      gap: 0px;
+      position: fixed;
       left: 100%;
-      top: 63px;
+      top: 55px;
       width: 100%;
       height: calc(100% - 63px);
       padding-top: 60px;
@@ -103,9 +114,11 @@ import Moon from './svg/moon.astro'
       font-size: 30px;
       background-color: var(--color-bg);
       transition: all 0.6s;
+      z-index: 100;
     }
     .btnNavbar {
       padding: 20px;
+      width: 100%;
       border: none;
       margin: 0;
     }
