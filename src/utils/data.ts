@@ -5,7 +5,7 @@ export const data = [
     body: "Desarrollada en colaboración con TintaSur para un diseño atractivo y moderno. Implementada con Next.js, i18n para multilenguaje, Tailwind para estilos y animaciones personalizadas. Una combinación de rendimiento y experiencia de usuario.",
     image: "/images/faroxlanding.webp",
     tools: ["NextJS", "Tailwind"],
-    deploy: "https://pcsoluciones-ituzaingo.vercel.app/",
+    deploy: "https://farox-landing.vercel.app/",
   },
   {
     href: "",
