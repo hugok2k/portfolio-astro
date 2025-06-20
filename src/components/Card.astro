@@ -10,20 +10,20 @@ export interface Props {
 
 const { title, body, href, deploy, image, tools } = Astro.props
 import { toolsMap } from "../utils/ToolsIcons"
-import Codepen from "./svg/codepen.astro"
 import Github from "./svg/github.astro"
 import LinkEx from "./svg/link.astro"
 ---
 
-<article class="flex flex-col justify-start items-center w-[450px] h-[580px] md:h-[520px] box-border group">
-  <header class="relative w-full h-56 overflow-hidden">
-    <img class="aspect-[16/9] w-full h-auto" src={image} alt={title} loading="lazy" />
-    <a class="flex items-center justify-center absolute top-0 w-full h-full bg-black/80 fill-white opacity-0 transition duration-300 group hover:opacity-100" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
-      <span class="textDeploy">Ir al sitio</span>
+<article class="flex flex-col justify-start items-center w-[450px] h-[580px] md:h-[520px] box-border">
+  <header class="relative w-full h-56 overflow-hidden group flex justify-center items-center rounded-xl" >
+    <div class="absolute inset-0 bg-black/30 rounded-xl pointer-events-none z-0"></div>
+    <img class="rounded-xl transition-transform duration-300 group-hover:scale-105 z-10 w-[450px] h-auto" src={image} alt={title} loading="lazy" />
+    <a class="flex items-center justify-center absolute top-0 w-full h-full bg-black/70 fill-white opacity-0 transition duration-300 group-hover:opacity-100 z-20" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
+      <span class="textDeploy text-white font-semibold uppercase">Ver demo</span>
       <LinkEx height="22" width="22" />
     </a>
   </header>
-  <a class="text-left font-semibold text-tertiary pt-4 px-6 hover:text-primary w-full transition-colors" href={deploy}>
+  <a class="text-left font-semibold text-tertiary pt-4 px-6 hover:text-primary w-full transition-colors" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
     {title}
   </a>
   <p class="w-full px-6 py-2 box-border h-52 md:h-32 text-[--color-text-base]">
@@ -48,13 +48,9 @@ import LinkEx from "./svg/link.astro"
         ><LinkEx height="26" width="26" />
       </a>
       {
-        href.includes('github') ? (
+        href !== "" && (
           <a class="svglink" href={href} target="_blank" rel="noreferrer noopener" aria-label="link a github">
             <Github height="24" width="24" />
-          </a>
-        ) : (
-          <a class="svglinkCodepen" href={href} target="_blank" rel="noreferrer noopener" aria-label="link a codepen">
-            <Codepen />
           </a>
         )
       }
