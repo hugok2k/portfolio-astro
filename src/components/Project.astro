@@ -10,11 +10,29 @@ import Card from "./Card.astro"
   <h4 class="text-xl md:text-2xl mb-20 text-primary text-balance text-center">
     Explora algunos de mis proyectos más destacados.
   </h4>
-  <div class="flex flex-wrap items-center justify-between gap-12 md:gap-20 w-full max-w-5xl">
-    {
-      data.map((e) => {
-        return <Card href={e.href} title={e.title} body={e.body} image={e.image} tools={e.tools} deploy={e.deploy} />
-      })
-    }
+  <div id="projects-list" class="flex flex-wrap items-center justify-between gap-12 md:gap-20 w-full max-w-5xl">
+    {data.map((e, i) => (
+      <div class={i > 5 ? 'hidden project-extra' : ''}>
+        <Card href={e.href} title={e.title} body={e.body} image={e.image} tools={e.tools} deploy={e.deploy} />
+      </div>
+    ))}
   </div>
+  {data.length > 6 && (
+    <button id="toggle-projects" class="mt-8 px-6 py-3 bg-primary text-white rounded-lg font-semibold shadow hover:bg-primary/80 transition-colors">
+      Ver más proyectos
+    </button>
+  )}
 </section>
+
+<script is:inline>
+const btn = document.getElementById('toggle-projects');
+const extras = document.querySelectorAll('.project-extra');
+let expanded = false;
+if (btn) {
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    extras.forEach(div => div.classList.toggle('hidden', !expanded));
+    btn.textContent = expanded ? 'Ver menos' : 'Ver más proyectos';
+  });
+}
+</script>
