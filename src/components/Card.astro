@@ -14,10 +14,10 @@ import Github from "./svg/github.astro"
 import LinkEx from "./svg/link.astro"
 ---
 
-<article class="flex flex-col justify-start items-center w-[450px] h-[580px] md:h-[520px] box-border">
+<article class="flex flex-col justify-start items-center w-full max-w-[450px] h-auto md:h-[520px] box-border">
   <header class="relative w-full h-56 overflow-hidden group flex justify-center items-center rounded-xl" >
     <div class="absolute inset-0 bg-black/30 rounded-xl pointer-events-none z-0"></div>
-    <img class="rounded-xl transition-transform duration-300 group-hover:scale-105 z-10 w-[450px] h-auto" src={image} alt={title} loading="lazy" />
+    <img class="rounded-xl transition-transform duration-300 group-hover:scale-105 z-10 w-full h-auto max-h-56 object-cover" src={image} alt={title} loading="lazy" />
     <a class="flex items-center justify-center absolute top-0 w-full h-full bg-black/70 fill-white opacity-0 transition duration-300 group-hover:opacity-100 z-20" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
       <span class="textDeploy text-white font-semibold uppercase">Ver demo</span>
       <LinkEx height="22" width="22" />
