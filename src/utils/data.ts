@@ -1,6 +1,15 @@
 export const data = [
   {
     github: "",
+    title: "Farox Web",
+    description:
+      "Desarrollada en colaboración con TintaSur, la web de Farox fue creada con Next.js, i18n y Tailwind, incluyendo un blog autogestionable. Diseño moderno, alto rendimiento y experiencia optimizada.",
+    image: "/images/faroxweb.webp",
+    tools: ["NextJS", "Tailwind"],
+    deploy: "https://faroxweb.vercel.app/",
+  },
+  {
+    github: "",
     title: "Farox - Landing Page",
     description:
       "Desarrollada en colaboración con TintaSur para un diseño atractivo y moderno. Implementada con Next.js, i18n para multilenguaje, Tailwind para estilos y animaciones personalizadas. Una combinación de rendimiento y experiencia de usuario.",
