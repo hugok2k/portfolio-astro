@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css"
+
 const {
   title = "Hugo Avila Dev",
   description = "Porfolio Hugo Avila - Desarrollador Frontend/Fullstack",
@@ -30,18 +32,18 @@ const {
     <meta name='twitter:image' content={ogurl} />
   </head>
   <main class='flex w-full h-screen flex-col items-center justify-center text-white bg-black'>
-    <h1 class="text-7xl font-bold">Error 404</h1>
-    <h2 class="text-2xl">¡Página no encontrada!</h2>
-    <div class='volver'>
-      <p>Prueba volver al inicio.</p>
+    <section class='flex flex-col items-center gap-4'>
+      <h1 class="text-7xl font-bold">Error 404</h1>
+      <div class='volver'>
+        <h2 class="text-2xl">¡Página no encontrada!</h2>
+        <p>Prueba volver al inicio.</p>
+      </div>
       <a class='boton' href='/'>Volver</a>
-    </div>
+    </section>
   </main>
 
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
     .volver {
@@ -59,7 +61,6 @@ const {
       font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
-      margin-top: 30px;
       font-weight: 600;
       transition: all 0.3s linear;
       text-decoration: none;
