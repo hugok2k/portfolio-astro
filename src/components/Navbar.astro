@@ -3,8 +3,8 @@ import Menu from "./svg/menu.astro"
 import Moon from "./svg/moon.astro"
 ---
 
-<header class="fixed backdrop-blur-lg bg-[--color-header] w-full top-0 left-0 z-40">
-  <nav class="flex justify-between items-center py-2 px-6 md:px-4 max-w-5xl m-auto">
+<header class="fixed backdrop-blur-lg bg-(--color-header) w-full top-0 left-0 z-40 flex justify-center items-center">
+  <nav class="flex justify-between items-center py-2 px-6 md:px-4 lg:px-0 max-w-5xl m-auto w-full">
     <a class="textLogo" href="/#" aria-label="Volver al inicio">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
         <path
@@ -27,24 +27,24 @@ import Moon from "./svg/moon.astro"
       <Menu />
     </span>
     <div class="menu text-center md:text-left" id="menu">
-      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#project" id="linkProject">
+      <a class="btnNavbar bg-(--color-bg) md:bg-transparent" href="/#project" id="linkProject">
         .proyectos<span class="colorBra"> ()</span></a
       >
-      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#skills" id="linkSkills">
+      <a class="btnNavbar bg-(--color-bg) md:bg-transparent" href="/#skills" id="linkSkills">
         .habilidades<span class="colorBra"> ()</span></a
       >
-      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#about" id="linkAbout">
+      <a class="btnNavbar bg-(--color-bg) md:bg-transparent" href="/#about" id="linkAbout">
         .sobre mí<span class="colorBra"> ()</span></a
       >
-      <a class="btnNavbar bg-[--color-bg] md:bg-transparent" href="/#contact" id="linkContact">
+      <a class="btnNavbar bg-(--color-bg) md:bg-transparent" href="/#contact" id="linkContact">
         .contacto<span class="colorBra"> ()</span></a
       >
       <button
-        class="usermode bg-[--color-bg] md:bg-transparent border-none ml-6 my-auto w-full md:w-auto py-8 md:py-0 flex justify-center items-center"
+        class="usermode bg-(--color-bg) md:bg-transparent border-none ml-6 my-auto w-full md:w-auto py-8 md:py-0 flex justify-center items-center"
         title="darkmode"
         aria-label="Cambiar a modo oscuro o claro."
       >
-        <span class="fill-[--color-text-base] transition-colors duration-300 hover:fill-[--color-primary] size-6 block"
+        <span class="fill-(--color-text-base) transition-colors duration-300 hover:fill-primary size-6 block cursor-pointer"
           ><Moon /></span
         >
       </button>
