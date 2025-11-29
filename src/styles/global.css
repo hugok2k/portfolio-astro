@@ -1,3 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #db2979;
+  --color-secondary: #ededed;
+  --color-tertiary: #ff6dae;
+}
+
 [data-theme="light"] {
   --color-text-base: #1c1c1c;
   --color-primary: #db2979;
@@ -18,16 +26,11 @@
 
 :root {
   color-scheme: dark;
-  --color-primary: #db2979;
-  --color-secondary: #ededed;
-  --color-tertiary: #ff6dae;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* * {
   transition: background-color 0.3s;
-}
+} */
 
 html {
   font-family: 'Geist Variable', sans-serif;
