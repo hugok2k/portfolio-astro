@@ -18,6 +18,9 @@
 
 :root {
   color-scheme: dark;
+  --color-primary: #db2979;
+  --color-secondary: #ededed;
+  --color-tertiary: #ff6dae;
 }
 
 * {
