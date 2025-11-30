@@ -87,7 +87,7 @@ import Button from "./ui/Button.astro"
           throw new Error('Something went wrong')
         }
       })
-      .then((data) => {
+      .then(() => {
         formBlock.style.display = 'none'
         thankyouBlock.style.display = 'flex'
       })

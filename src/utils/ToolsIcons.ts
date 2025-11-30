@@ -10,14 +10,14 @@ import Tailwind from "../components/svg/tailwind.astro"
 import Typescript from "../components/svg/typescript.astro"
 
 export const toolsMap = {
-  NextJS: Next,
-  CSS: Css3,
-  GoogleAPI: Google,
-  ReactJS: React,
-  Tailwind: Tailwind,
-  Astro: Astrosvg,
-  NodeJS: Node,
-  MongoDB: Mongodb,
-  HTML: Html5,
-  TypeScript: Typescript,
+	NextJS: Next,
+	CSS: Css3,
+	GoogleAPI: Google,
+	ReactJS: React,
+	Tailwind: Tailwind,
+	Astro: Astrosvg,
+	NodeJS: Node,
+	MongoDB: Mongodb,
+	HTML: Html5,
+	TypeScript: Typescript,
 } as const
