@@ -1,0 +1,75 @@
+---
+import "../styles/global.css"
+
+const {
+	title = "Hugo Avila Dev",
+	description = "Porfolio Hugo Avila - Desarrollador Frontend/Fullstack",
+	ogurl = "https://hugoavila.dev/images/og.webp",
+} = Astro.props
+---
+
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <link rel='icon' type='image/svg+xml' href='/ha.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <!-- Facebook Meta Tags -->
+    <meta property='og:url' content='https://hugoavila.dev/' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogurl} />
+    <meta property='og:site_name' content={description} />
+    <!-- Twitter Meta Tags -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta property='twitter:domain' content='hugoavila.dev' />
+    <meta property='twitter:url' content='https://hugoavila.dev/' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogurl} />
+  </head>
+  <main class='flex w-full h-screen flex-col items-center justify-center text-white bg-black'>
+    <section class='flex flex-col items-center gap-4'>
+      <h1 class="text-7xl font-bold">Error 404</h1>
+      <div class='volver'>
+        <h2 class="text-2xl">¡Página no encontrada!</h2>
+        <p>Prueba volver al inicio.</p>
+      </div>
+      <a class='boton' href='/'>Volver</a>
+    </section>
+  </main>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .volver {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    .boton {
+      color: #fff;
+      background-color: #db2979;
+      padding: 10px 22px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s linear;
+      text-decoration: none;
+    }
+    .boton:hover {
+      background-color: #fff;
+      color: #db2979;
+    }
+  </style>
+
+
+</html>

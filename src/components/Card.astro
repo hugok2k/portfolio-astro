@@ -1,0 +1,147 @@
+---
+export interface Props {
+	title: string
+	description: string
+	github: string
+	deploy: string
+	image: string
+	tools: string[]
+}
+
+const { title, description, github, deploy, image, tools } = Astro.props
+
+import { toolsMap } from "../utils/ToolsIcons"
+import Github from "./svg/github.astro"
+import LinkEx from "./svg/link.astro"
+---
+
+<article class="flex flex-col justify-start items-center w-full max-w-[450px] h-auto box-border">
+  <header class="relative w-full h-56 overflow-hidden group flex justify-center items-center rounded-xl" >
+    <div class="absolute inset-0 bg-black/30 rounded-xl pointer-events-none z-0"></div>
+    <img class="rounded-xl transition-transform duration-300 group-hover:scale-105 z-10 w-full h-auto max-h-56 object-cover" src={image} alt={title} loading="lazy" />
+    <a class="flex items-center justify-center absolute top-0 w-full h-full bg-black/70 fill-white opacity-0 transition duration-300 group-hover:opacity-100 z-20" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
+      <span class="textDeploy text-white font-semibold uppercase">Ver proyecto</span>
+      <LinkEx height="22" width="22" />
+    </a>
+  </header>
+  <a class="text-left font-semibold text-tertiary pt-4 px-6 hover:text-primary w-full transition-colors" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
+    {title}
+  </a>
+  <p class="w-full px-6 py-2 box-border h-32 text-(--color-text-base) text-sm md:text-base">
+    {description}
+  </p>
+  <footer class="flex flex-row justify-between items-center w-full px-6 py-4">
+    <section class="flex items-center gap-3 w-full box-border text-white">
+      {
+        tools.map((tool) => {
+          const IconComponent = toolsMap[tool as keyof typeof toolsMap]
+          return IconComponent ? (
+            <div class="toolSvg tooltip">
+              <span class="tooltiptext">{tool}</span>
+              <IconComponent />
+            </div>
+          ) : null
+        })
+      }
+    </section>
+    <section class="flex justify-end items-center gap-3 w-full box-border">
+      <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="link al sitio desplegado">
+        <LinkEx height="26" width="26" />
+      </a>
+      {
+        github !== "" && (
+          <a class="svglink" href={github} target="_blank" rel="noreferrer noopener" aria-label="link a github">
+            <Github height="24" width="24" />
+          </a>
+        )
+      }
+    </section>
+  </footer>
+</article>
+
+<style>
+  .svglinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 0px 24px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+  .svglink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    fill: var(--color-text-base);
+    transition: 0.3s;
+  }
+  .svglink:hover {
+    fill: var(--color-primary);
+  }
+  .svglinkCodepen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    stroke: var(--color-svg);
+    transition: 0.3s;
+  }
+  .svglinkCodepen:hover {
+    stroke: var(--color-primary);
+  }
+  .textDeploy {
+    padding-right: 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+  .toolSvg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 29px;
+    position: relative;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    top: -6px;
+    left: 45%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: var(--color-primary) transparent transparent transparent;
+    transition: all 0.3s;
+    opacity: 0;
+  }
+
+  .tooltip .tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    width: 84px;
+    background-color: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 34px;
+    left: -30px;
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 12px;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>

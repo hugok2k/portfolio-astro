@@ -1,0 +1,161 @@
+---
+import Menu from "./svg/menu.astro"
+import Moon from "./svg/moon.astro"
+---
+
+<header class="fixed backdrop-blur-lg bg-(--color-header) w-full top-0 left-0 z-40 flex justify-center items-center">
+  <nav class="flex justify-between items-center py-2 px-6 md:px-4 lg:px-0 max-w-5xl m-auto w-full">
+    <a class="w-10 h-10 fill-(--color-text-base) transition-colors duration-300 hover:fill-primary" href="/#" aria-label="Volver al inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
+        <path
+          d="M3.6 5.7V10c0 1.3-.4 2-1.3 2.1.9.1 1.3.8 1.3 2v4.4c0 .2 0 .3.1.4.1.1.2.1.4.1H5v1.2H3.6c-.5 0-.9-.1-1.2-.4-.2-.3-.3-.6-.3-1.2v-4.2c0-.6-.1-1.1-.3-1.4-.2-.3-.6-.5-1.1-.5H.4v-1.2h.3c.5 0 .9-.2 1.1-.5.2-.3.3-.8.3-1.4V5.6c0-1 .5-1.6 1.5-1.6H5v1.2h-.8c-.2 0-.4 0-.4.1-.1.1-.2.3-.2.4z"
+          class="colorBra"
+        >
+        </path>
+        <path
+          d="M9.8 6.7h1.6v10.8H9.8v-4.7H7.6v4.7H6V6.7h1.6v4.8h2.3l-.1-4.8zm7.3 10.8-.4-2.5h-2.3l-.4 2.5h-1.6l1.9-10.8h2.3l2.1 10.8h-1.6zm-2.5-3.8h1.9l-1-5.7-.9 5.7z"
+        >
+        </path>
+        <path
+          d="M20.4 10.1V5.7c0-.2 0-.3-.1-.4-.1-.1-.2-.1-.4-.1H19V4h1.4c.5 0 .9.1 1.1.4.2.3.3.6.3 1.1v4.1c0 .7.1 1.1.3 1.4.2.3.6.5 1.1.5h.3v1.2h-.3c-.5 0-.9.1-1.1.4-.2.3-.3.8-.3 1.4v4.2c0 .5-.1.9-.3 1.2-.2.3-.6.4-1.1.4H19v-1.2h.8c.2 0 .4 0 .4-.1.1-.1.1-.2.1-.4v-4.4c0-1.3.4-1.9 1.3-2-.8-.2-1.2-.9-1.2-2.1z"
+          class="colorBra"
+        >
+        </path>
+      </svg>
+    </a>
+    <button
+      class="navToggle hidden max-[850px]:block cursor-pointer fill-primary bg-transparent p-2"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      type="button"
+    >
+      <Menu />
+    </button>
+
+    <!-- Desktop menu (visible >850px) -->
+    <div class="flex left-auto top-auto w-[780px] h-auto p-0 flex-row justify-end items-center gap-5 text-base bg-transparent max-[850px]:hidden">
+      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#project">.proyectos<span class="colorBra"> ()</span></a>
+      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#skills">.habilidades<span class="colorBra"> ()</span></a>
+      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#about">.sobre mí<span class="colorBra"> ()</span></a>
+      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#contact">.contacto<span class="colorBra"> ()</span></a>
+      <button
+        class="usermode border-none ml-6 my-auto md:w-auto py-2 flex justify-center items-center bg-transparent"
+        title="darkmode"
+        aria-label="Cambiar a modo oscuro o claro."
+      >
+        <span class="fill-(--color-text-base) transition-colors duration-300 hover:fill-primary w-6 h-6 block cursor-pointer"><Moon /></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile menu (visible <=850px) -->
+  <div
+    id="menu-mobile"
+    class="hidden max-[850px]:flex max-[850px]:fixed max-[850px]:left-full max-[850px]:top-[55px] max-[850px]:w-full max-[850px]:h-[calc(100%-63px)] max-[850px]:p-[60px] max-[850px]:flex-col max-[850px]:justify-center max-[850px]:items-center max-[850px]:gap-0 max-[850px]:text-2xl max-[850px]:bg-(--color-bg) max-[850px]:z-50 min-h-screen"
+  >
+    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#project" id="linkProject">.proyectos<span class="colorBra"> ()</span></a>
+    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#skills" id="linkSkills">.habilidades<span class="colorBra"> ()</span></a>
+    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#about" id="linkAbout">.sobre mí<span class="colorBra"> ()</span></a>
+    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#contact" id="linkContact">.contacto<span class="colorBra"> ()</span></a>
+    <button
+      class="usermode border-none w-full py-8 flex justify-center items-center bg-transparent"
+      title="darkmode"
+      aria-label="Cambiar a modo oscuro o claro."
+    >
+      <span class="fill-(--color-text-base) transition-colors hover:fill-primary w-6 h-6 block cursor-pointer justify-center items-center">
+        <Moon />
+      </span>
+    </button>
+  </div>
+</header>
+<style>
+  .colorBra {
+    color: var(--color-primary);
+    fill: var(--color-primary);
+  }
+  @media (max-width: 850px) {
+    #menu-mobile {
+      box-sizing: border-box;
+      transition: left 0.6s ease, background-color 0.3s ease;
+      z-index: 100;
+    }
+
+    #menu-mobile.menuOn {
+      left: 0;
+    }
+  }
+</style>
+<script>
+  // Code for toggle menu
+  const navToggle = document.querySelector('.navToggle')
+  const navMenu = document.querySelector('#menu-mobile')
+  const linkAbout = document.querySelector('#linkAbout')
+  const linkSkills = document.querySelector('#linkSkills')
+  const linkProject = document.querySelector('#linkProject')
+  const linkContact = document.querySelector('#linkContact')
+  if (
+    navToggle === null ||
+    navMenu === null ||
+    linkAbout === null ||
+    linkSkills === null ||
+    linkProject === null ||
+    linkContact === null
+  ) {
+    throw new Error('No se encontró el botón de menú o el menú')
+  }
+
+  const setAria = (open: boolean) => {
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false')
+  }
+
+  navToggle.addEventListener('click', () => {
+    const opened = navMenu.classList.toggle('menuOn')
+    setAria(opened)
+  })
+  const closeMobile = () => {
+    if (navMenu.classList.contains('menuOn')) {
+      navMenu.classList.remove('menuOn')
+      setAria(false)
+    }
+  }
+
+  linkAbout.addEventListener('click', closeMobile)
+  linkProject.addEventListener('click', closeMobile)
+  linkSkills.addEventListener('click', closeMobile)
+  linkContact.addEventListener('click', closeMobile)
+
+  const usermodeBtns = document.querySelectorAll('.usermode')
+  const setMode = (theme: any) => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }
+  if (usermodeBtns && usermodeBtns.length) {
+    usermodeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const toggleTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'
+        setMode(toggleTheme)
+      })
+    })
+  }
+  setMode(localStorage.getItem('theme') || 'dark') // default dark mode. Other option, use preferenceOS.
+  // Easter egg :)
+  let count = 0
+  const harryPotterLumos = ['l', 'u', 'm', 'o', 's']
+  const harryPotterNox = ['n', 'o', 'x']
+  document.addEventListener('keydown', (e) => {
+    if (e.key === harryPotterLumos[count]) {
+      count++
+      if (count === harryPotterLumos.length) {
+        setMode('light')
+        count = 0
+      }
+    } else if (e.key === harryPotterNox[count]) {
+      count++
+      if (count === harryPotterNox.length) {
+        setMode('dark')
+        count = 0
+      }
+    } else {
+      count = 0
+    }
+  })
+</script>

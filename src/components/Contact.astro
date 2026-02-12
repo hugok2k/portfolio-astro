@@ -1,0 +1,98 @@
+---
+import Button from "./ui/Button.astro"
+---
+
+  <h3 class="text-3xl md:text-6xl font-bold pt-4 max-w-3xl text-balance text-center text-(--color-text-base) mt-20 md:mt-72 scroll-mt-20" id="contact">
+  ¿Listo para empezar tu próximo proyecto?
+</h3>
+<h4 class="text-xl md:text-2xl mb-20 text-primary text-balance text-center px-4">
+  Hablemos de cómo podemos colaborar
+</h4>
+<section class="flex justify-center items-center w-full" id="formBlock">
+  <form id="someForm" class="flex flex-col w-full max-w-5xl gap-2 px-4">
+    <label for="name" class="text-(--color-text-base) text-lg">Nombre:</label>
+    <input
+      class="bg-(--color-bg) w-full border-2 border-primary px-4 py-2 outline-none focus:border-(--color-text-base) transition-colors duration-300 text-(--color-text-base)"
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Ej: John Doe"
+      required
+    />
+    <label for="email" class="text-(--color-text-base) text-lg">Correo:</label>
+    <input
+      class="bg-(--color-bg) w-full border-2 border-primary px-4 py-2 outline-none focus:border-(--color-text-base) transition-colors duration-300 text-(--color-text-base)"
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Ej: john@doe.com"
+      required
+    />
+    <label for="comments" class="text-[--color-text-base] text-lg">Mensaje:</label>
+    <textarea
+      name="comments"
+      id="comments"
+      rows="12"
+      placeholder="Escribe tu mensaje."
+      required
+      class="bg-(--color-bg) w-full border-2 border-primary px-4 py-2 outline-none focus:border-(--color-text-base) transition-colors duration-300 text-(--color-text-base)"
+    ></textarea>
+    <input type="hidden" name="_next" value="https://hugoavila.dev/gracias" />
+    <Button title="Enviar" id="submitButton" type="submit" classname="mt-7 g-recaptcha max-w-36" />
+  </form>
+</section>
+<div id="thankyouBlock" class="flex-col justify-center items-center min-h-96 hidden">
+  <h4 class="text-3xl">Gracias por tu mensaje</h4>
+  <p>Me pondré en contacto contigo lo antes posible</p>
+  <div class="text-[--color-primary] animate-pulse mt-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-8"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+    </svg>
+  </div>
+</div>
+
+<script>
+  const someForm = document.getElementById('someForm')
+  const formBlock = document.getElementById('formBlock')
+  const thankyouBlock = document.getElementById('thankyouBlock')
+  if (someForm === null || formBlock === null || thankyouBlock === null) {
+    throw new Error('Form not found')
+  }
+  someForm.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const formData = new FormData(this as HTMLFormElement)
+    const requestOptions = {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json'
+      }
+    }
+
+    fetch('https://formspree.io/f/xblrdelg', requestOptions)
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error('Something went wrong')
+        }
+      })
+      .then(() => {
+        formBlock.style.display = 'none'
+        thankyouBlock.style.display = 'flex'
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
+  })
+</script>

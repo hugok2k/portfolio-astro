@@ -1,0 +1,85 @@
+---
+import Javascript from "../components/svg/javascript.astro"
+import Astrosvg from "./svg/astrosvg.astro"
+import Burpsuite from "./svg/burpsuite.astro"
+import Dockersvg from "./svg/dockersvg.astro"
+import Next from "./svg/next.astro"
+import Node from "./svg/node.astro"
+import Postgres from "./svg/postgres.astro"
+import React from "./svg/react.astro"
+import Tailwind from "./svg/tailwind.astro"
+import Typescript from "./svg/typescript.astro"
+---
+
+<section class="flex flex-col justify-center items-center my-40 md:my-56 px-4 max-w-5xl">
+  <h3 class="text-3xl md:text-6xl font-bold mb-10 md:mb-20 max-w-2xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40" id="skills">
+    Mi Stack Tecnológico
+  </h3>
+  <p class="w-full text-lg mb-10">
+    Mi stack tecnológico me permite desarrollar soluciones completas y robustas. Dominio en desarrollo frontend y
+    backend, así como en seguridad web y de APIs, utilizo herramientas y lenguajes clave para cada fase del proyecto.
+  </p>
+  <div class="flex flex-wrap justify-center gap-6 md:gap-12 box-border text-sm max-w-3xl">
+    <div class="skillIconContainer">
+      <Javascript />
+      <span>JavaScript</span>
+    </div>
+    <div class="skillIconContainer">
+      <Typescript />
+      <span>TypeScript</span>
+    </div>
+    <div class="skillIconContainer">
+      <Next />
+      <span>NextJS</span>
+    </div>
+    <div class="skillIconContainer">
+      <React />
+      <span>ReactJS</span>
+    </div>
+    <div class="skillIconContainer">
+      <Astrosvg />
+      <span>Astro</span>
+    </div>
+    <div class="skillIconContainer">
+      <Node />
+      <span>NodeJS</span>
+    </div>
+    <div class="skillIconContainer">
+      <div class="fixSvgTailwind">
+        <Tailwind />
+      </div>
+      <span>Tailwind</span>
+    </div>
+    <div class="skillIconContainer">
+      <Postgres />
+      <span>PostgreSQL</span>
+    </div>
+    <div class="skillIconContainer">
+      <Burpsuite />
+      <span>BurpSuite</span>
+    </div>
+      <div class="skillIconContainer">
+      <Dockersvg />
+      <span>Docker</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skillIconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    text-align: center;
+  }
+  .fixSvgTailwind {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+  }
+</style>
