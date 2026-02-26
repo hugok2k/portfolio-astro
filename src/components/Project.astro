@@ -5,12 +5,12 @@ import Button from "./ui/Button.astro"
 ---
 
 <section class="flex flex-col justify-center items-center w-full px-4 mt-20 md:mt-0">
-  <h3 class="text-3xl md:text-6xl font-bold pt-4 max-w-5xl text-balance text-center text-(--color-text-base) scroll-mt-20" id="project">
+  <h2 class="text-3xl md:text-6xl font-bold pt-4 max-w-5xl text-balance text-center text-(--color-text-base) scroll-mt-20" id="project">
     Transformando ideas en soluciones digitales robustas y seguras.
-  </h3>
-  <h4 class="text-xl md:text-2xl mb-20 text-primary text-balance text-center">
+  </h2>
+  <h3 class="text-xl md:text-2xl mb-20 text-primary text-balance text-center">
     Explora algunos de mis proyectos más destacados.
-  </h4>
+  </h3>
   <div id="projects-list" class="flex flex-col lg:flex-row lg:flex-wrap items-center justify-between gap-12 md:gap-20 w-full max-w-5xl">
     {data.map((e, i) => (
       <div class={i > 5 ? 'hidden project-extra' : ''}>
