@@ -1,9 +1,27 @@
 export const data = [
 	{
 		github: "",
+		title: "Feminacida",
+		description:
+			"Migración a arquitectura headless con Next.js basada en el diseño de TintaSur. Un rediseño de infraestructura que incluyó el paso a un VPS optimizado, securización integral y transferencia de dominio para garantizar estabilidad.",
+		image: "/images/feminacida.webp",
+		tools: ["NextJS", "Tailwind", "WordPress","VPS"],
+		deploy: "https://feminacida.com.ar/",
+	},
+	{
+		github: "",
+		title: "Goryla",
+		description:
+			"Landing page desarrollada con Next.js y Tailwind CSS, diseñada estratégicamente por TintaSur. Un proyecto colaborativo enfocado en la conversión, con estética de alto impacto y una arquitectura escalable lista para el crecimiento futuro.",
+		image: "/images/goryla.webp",
+		tools: ["NextJS", "Tailwind"],
+		deploy: "https://goryla.ar/",
+	},
+	{
+		github: "",
 		title: "Portafolio Virginia Pianzola",
 		description:
-			"Landing page desarrollada con Astro y estilizada con Tailwind CSS. Una solución web moderna diseñada para presentar la trayectoria y proyectos de Virginia Pianzola con la máxima velocidad y eficiencia.",
+			"Landing page desarrollada con Astro y Tailwind CSS. Una solución web moderna diseñada para presentar la trayectoria y proyectos de Virginia Pianzola con la máxima velocidad y eficiencia.",
 		image: "/images/virginiapianzola.webp",
 		tools: ["Astro", "Tailwind"],
 		deploy: "https://virginiapianzola.com/",
