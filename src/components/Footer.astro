@@ -3,50 +3,60 @@ import Astrosvg from "./svg/astrosvg.astro"
 import Github from "./svg/github.astro"
 import Linkedin from "./svg/linkedin.astro"
 import Mail from "./svg/mail.astro"
+
+const year = new Date().getFullYear()
+
+const ctaClass =
+  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) stroke-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary hover:stroke-primary transition-colors duration-200"
+
+const navLinkClass = "text-(--color-text-base)/80 hover:text-primary transition-colors duration-200"
 ---
 
-<footer class="flex flex-col justify-center items-center pt-24 pb-16 text-sm w-full">
-  <p class="flex justify-end items-center gap-1">
-    Creado con <span class="block size-4"><Astrosvg /></span>
-    <a
-      class="text-primary hover:text-[--color-svg]"
-      href="https://astro.build/"
-      target="_blank"
-      rel="noreferrer noopener">Astro</a
-    > - repositorio en <a
-      class="text-primary hover:text-[--color-svg]"
-      href="https://github.com/hugok2k/portfolio-astro"
-      target="_blank"
-      rel="noreferrer noopener">Github</a
-    >
-  </p>
-  <div class="flex justify-center items-center gap-4 mt-5">
-    <a
-      class="fill-primary hover:fill-[--color-svg] transition-colors duration-300"
-      href="https://www.linkedin.com/in/devhugoavila/"
-      target="_blank"
-      aria-label="Link a linkedin"
-      rel="noreferrer noopener"
-    >
-      <Linkedin height="28" width="28" />
-    </a>
-    <a
-      class="fill-primary hover:fill-[--color-svg] transition-colors duration-300"
-      href="https://github.com/hugok2k"
-      target="_blank"
-      aria-label="Link a github"
-      rel="noreferrer noopener"
-    >
-      <Github height="28" width="28" />
-    </a>
-    <a
-      class="stroke-primary hover:stroke-[--color-svg] transition-colors duration-300"
-      href="mailto:hugoavila.dev@gmail.com"
-      target="_blank"
-      aria-label="Link a correo"
-      rel="noreferrer noopener"
-    >
-      <Mail height="28" width="28" />
-    </a>
+<footer class="flex flex-col justify-center items-center w-full px-4 pt-16 pb-10 border-t border-(--color-text-base)/15">
+  <div class="flex flex-col items-center gap-8 w-full max-w-6xl">
+    <div class="flex flex-col items-center gap-3">
+      <p class="font-mono text-xs text-(--color-text-base)/50">
+        <span class="opacity-50">$</span> menu --list
+      </p>
+      <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 font-mono text-sm" aria-label="Navegación del pie de página">
+        <a href="/#project" class={navLinkClass}>proyectos</a>
+        <a href="/#talks" class={navLinkClass}>charlas</a>
+        <a href="/#about" class={navLinkClass}>sobre-mi</a>
+        <a href="/#contact" class={navLinkClass}>contacto</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-wrap justify-center items-center gap-3">
+      <a class={ctaClass} href="https://www.linkedin.com/in/devhugoavila/" target="_blank" aria-label="Link a linkedin" rel="noreferrer noopener">
+        <Linkedin height="16" width="16" />
+        linkedin
+      </a>
+      <a class={ctaClass} href="https://github.com/hugok2k" target="_blank" aria-label="Link a github" rel="noreferrer noopener">
+        <Github height="16" width="16" />
+        github
+      </a>
+      <a class={ctaClass} href="mailto:hugoavila.dev@gmail.com" target="_blank" aria-label="Link a correo" rel="noreferrer noopener">
+        <Mail height="16" width="16" />
+        email
+      </a>
+    </div>
+
+    <div class="flex flex-col items-center gap-1 font-mono text-xs text-(--color-text-base)/50 text-center">
+      <p class="flex items-center gap-1.5">
+        creado con
+        <span class="inline-flex items-center gap-1 text-(--color-text-base)/80">
+          <span class="block size-3.5"><Astrosvg /></span>
+          <a class="hover:text-primary transition-colors duration-200" href="https://astro.build/" target="_blank" rel="noreferrer noopener">Astro</a>
+        </span>
+        · repositorio en
+        <a
+          class="text-(--color-text-base)/80 hover:text-primary transition-colors duration-200"
+          href="https://github.com/hugok2k/portfolio-astro"
+          target="_blank"
+          rel="noreferrer noopener">Github</a
+        >
+      </p>
+      <p>{year} Hugo Avila</p>
+    </div>
   </div>
 </footer>
