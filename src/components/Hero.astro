@@ -2,77 +2,88 @@
 import Github from "../components/svg/github.astro"
 import Linkedin from "../components/svg/linkedin.astro"
 import Mail from "../components/svg/mail.astro"
+
+const ctaClass =
+  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) stroke-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary hover:stroke-primary transition-colors duration-200"
 ---
 
-<article class="flex flex-col justify-center items-center min-h-screen h-full w-full max-w-5xl px-6 md:px-4">
-  <section class="flex flex-col md:flex-row justify-center items-center md:items-start gap-10 w-full z-10 mt-14">
-    <img class="rounded-full w-32 sm:w-52" src="/images/avatar.webp" alt="Una fotografía sobre mí" />
-    <div class="w-full px-4">
-      <p class="text-4xl font-semibold md:text-7xl text-center md:text-left -ml-1">Hola. Soy Hugo</p>
-      <h1 class="text-base md:text-2xl text-primary font-semibold text-center md:text-left text-balance">
-        Fullstack Developer & Cybersecurity Consultant
-      </h1>
-      <p class="text-left mt-6 text-base md:text-lg">
-        Con una trayectoria de 20 años en tecnología, hoy fusiono el desarrollo Fullstack con la consultoría en ciberseguridad. Mi experiencia me permite asesorar y construir soluciones donde la robustez y la seguridad son la prioridad.
-      </p>
-      <section class="flex justify-center md:justify-start items-center gap-8 w-full mt-10">
-        <div class="flex justify-center items-center gap-5">
-          <a
-            class="fill-primary hover:fill-(--color-svg) transition-colors duration-300"
-            href="https://www.linkedin.com/in/devhugoavila/"
-            target="_blank"
-            aria-label="Link a linkedin"
-            rel="noreferrer noopener"
-          >
-            <Linkedin height="28" width="28" />
-          </a>
-          <a
-            class="fill-primary hover:fill-(--color-svg) transition-colors duration-300"
-            href="https://github.com/hugok2k"
-            target="_blank"
-            aria-label="Link a github"
-            rel="noreferrer noopener"
-          >
-            <Github height="28" width="28" />
-          </a>
-          <a
-            class="stroke-primary hover:stroke-(--color-svg) transition-colors duration-300"
-            href="mailto:hugoavila.dev@gmail.com"
-            target="_blank"
-            aria-label="Link a correo"
-            rel="noreferrer noopener"
-          >
-            <Mail />
-          </a>
-        </div>
-      </section>
-    </div>
-  </section>
-  <button
-    type="button"
-    class="animate-bounce text-slate-400 hover:text-white transition-colors duration-300 mt-4 md:mt-20 buttondown z-10 cursor-pointer p-4"
-    aria-label="Ver proyectos"
-    title="Ver proyectos"
-    aria-controls="project"
+<article class="relative flex flex-col justify-center items-center min-h-screen h-full w-full overflow-hidden">
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
+    style="background-image: repeating-linear-gradient(0deg, var(--color-text-base) 0px, var(--color-text-base) 1px, transparent 1px, transparent 3px); mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);"
+    aria-hidden="true"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="size-6"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-    </svg>
-    <span class="sr-only">Ver proyectos</span>
-  </button>
-  <div class="absolute inset-0 overflow-hidden">
+  </div>
+  <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse delay-1000">
     </div>
+  </div>
+
+  <div class="flex flex-col justify-center items-center w-full max-w-6xl px-6 md:px-4">
+    <section class="w-full border border-(--color-text-base)/15 bg-(--color-bg)/70 backdrop-blur-sm mt-14 z-10">
+      <div class="flex items-center gap-2 px-4 py-2.5 border-b border-(--color-text-base)/15" aria-hidden="true">
+        <span class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-(--color-text-base)/15"></span>
+          <span class="w-2 h-2 rounded-full bg-(--color-text-base)/15"></span>
+          <span class="w-2 h-2 rounded-full bg-primary/50"></span>
+        </span>
+        <span class="flex-1 text-center font-mono text-[11px] text-(--color-text-base)/35">~/hugo/whoami</span>
+        <span class="font-mono text-[11px] text-primary shrink-0">root</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-10 w-full px-6 py-10 md:px-10 md:py-12">
+        <img class="rounded-full w-32 sm:w-52" src="/images/avatar.webp" alt="Una fotografía sobre mí" />
+        <div class="w-full">
+          <p class="font-mono text-xs md:text-sm text-primary text-center md:text-left mb-2">
+            <span class="opacity-50">$</span> whoami
+          </p>
+          <p class="text-4xl font-semibold md:text-7xl text-center md:text-left -ml-1">Hola. Soy Hugo</p>
+          <h1 class="text-base md:text-2xl text-primary font-semibold text-center md:text-left text-balance">
+            Fullstack Developer & Cybersecurity Consultant
+          </h1>
+          <p class="text-left mt-6 text-base md:text-lg text-(--color-text-base)/85">
+            Con una trayectoria de 20 años en tecnología, hoy fusiono el desarrollo Fullstack con la consultoría en ciberseguridad. Mi experiencia me permite asesorar y construir soluciones donde la robustez y la seguridad son la prioridad.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start items-center gap-3 w-full mt-8">
+            <a class={ctaClass} href="https://www.linkedin.com/in/devhugoavila/" target="_blank" aria-label="Link a linkedin" rel="noreferrer noopener">
+              <Linkedin height="16" width="16" />
+              linkedin
+            </a>
+            <a class={ctaClass} href="https://github.com/hugok2k" target="_blank" aria-label="Link a github" rel="noreferrer noopener">
+              <Github height="16" width="16" />
+              github
+            </a>
+            <a class={ctaClass} href="mailto:hugoavila.dev@gmail.com" target="_blank" aria-label="Link a correo" rel="noreferrer noopener">
+              <Mail height="16" width="16" />
+              email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button
+      type="button"
+      class="animate-bounce text-(--color-text-base)/40 hover:text-primary transition-colors duration-300 mt-10 md:mt-14 buttondown z-10 cursor-pointer p-4"
+      aria-label="Ver proyectos"
+      title="Ver proyectos"
+      aria-controls="project"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+      </svg>
+      <span class="sr-only">Ver proyectos</span>
+    </button>
   </div>
 </article>
 
