@@ -6,16 +6,17 @@ import Button from "./ui/Button.astro"
   <h2
     class="text-3xl md:text-6xl font-bold pt-4 max-w-3xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40"
     id="contact"
+    data-reveal
   >
     ¿Listo para empezar tu <span class="text-primary">próximo proyecto</span>?
   </h2>
-  <h3 class="font-mono text-sm md:text-lg mt-4 mb-2 text-primary text-balance text-center">
+  <h3 class="font-mono text-sm md:text-lg mt-4 mb-2 text-primary text-balance text-center" data-reveal>
     <span class="opacity-50">$</span> contacto --send
   </h3>
-  <p class="font-mono text-xs text-(--color-text-base)/70 mb-10">// hablemos de cómo podemos colaborar</p>
+  <p class="font-mono text-xs text-(--color-text-base)/70 mb-10" data-reveal>// hablemos de cómo podemos colaborar</p>
 
   <div class="w-full max-w-3xl" id="formBlock">
-    <div class="border border-(--color-text-base)/15 bg-(--color-bg)/70">
+    <div class="border border-(--color-text-base)/15 bg-(--color-bg)/70" data-reveal>
       <div class="flex items-center gap-2 px-4 py-2.5 border-b border-(--color-text-base)/15" aria-hidden="true">
         <span class="flex gap-1.5">
           <span class="w-2 h-2 rounded-full bg-(--color-text-base)/15"></span>
@@ -59,7 +60,7 @@ import Button from "./ui/Button.astro"
     </div>
   </div>
 
-  <div id="thankyouBlock" class="flex-col justify-center items-center min-h-96 hidden w-full max-w-3xl border border-(--color-text-base)/15 bg-(--color-bg)/70 px-6 py-10 text-center">
+  <div id="thankyouBlock" class="flex-col justify-center items-center min-h-96 hidden w-full max-w-3xl border border-(--color-text-base)/15 bg-(--color-bg)/70 px-6 py-10 text-center" data-reveal>
     <p class="font-mono text-xs text-primary mb-3"><span class="opacity-50">$</span> status --sent</p>
     <h4 class="text-2xl md:text-3xl font-bold text-(--color-text-base) mb-2">Gracias por tu mensaje</h4>
     <p class="text-(--color-text-base)/70">Me pondré en contacto contigo lo antes posible</p>

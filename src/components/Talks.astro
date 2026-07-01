@@ -11,20 +11,21 @@ const latestTalks = numbered.slice(0, 4)
     <h2
       class="text-3xl md:text-6xl font-bold mb-6 max-w-3xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40"
       id="talks"
+      data-reveal
     >
       Del laboratorio al escenario.
     </h2>
-    <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center">
+    <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center" data-reveal>
       <span class="opacity-50">$</span> charlas --last=4 --topic=&quot;ia + pentesting&quot;
     </h3>
     {
       talks.length > 4 && (
-        <p class="font-mono text-xs text-(--color-text-base)/70 mb-6">// mostrando las últimas 4 charlas</p>
+        <p class="font-mono text-xs text-(--color-text-base)/70 mb-6" data-reveal>// mostrando las últimas 4 charlas</p>
       )
     }
 
     <ol class={`relative w-full max-w-2xl ${talks.length > 4 ? "mt-8" : "mt-16"}`}>
-      {latestTalks.map((talk, i) => <TalkItem {...talk} isLast={i === latestTalks.length - 1} />)}
+      {latestTalks.map((talk, i) => <TalkItem {...talk} isLast={i === latestTalks.length - 1} index={i} />)}
     </ol>
   </div>
 </section>

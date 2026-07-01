@@ -8,15 +8,16 @@ import Button from "./ui/Button.astro"
   <h2
     class="text-3xl md:text-6xl font-bold pt-4 max-w-5xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40"
     id="project"
+    data-reveal
   >
     <span class="text-primary">Transformando</span> ideas en soluciones digitales <span class="text-primary">robustas y seguras</span>.
   </h2>
-  <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center">
+  <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center" data-reveal>
     <span class="opacity-50">$</span> proyectos --list --total={data.length}
   </h3>
   {
     data.length > 6 && (
-      <p class="font-mono text-xs text-(--color-text-base)/70 mb-6">// mostrando 6 de {data.length} proyectos</p>
+      <p class="font-mono text-xs text-(--color-text-base)/70 mb-6" data-reveal>// mostrando 6 de {data.length} proyectos</p>
     )
   }
 
@@ -26,7 +27,7 @@ import Button from "./ui/Button.astro"
   >
     {
       data.map((e, i) => (
-        <div class={`h-full ${i > 5 ? "hidden project-extra" : ""}`}>
+        <div class={`h-full ${i > 5 ? "hidden project-extra" : ""}`} data-reveal style={`transition-delay: ${(i % 3) * 90}ms`}>
           <Card github={e.github} title={e.title} description={e.description} image={e.image} tools={e.tools} deploy={e.deploy} number={i + 1} />
         </div>
       ))
