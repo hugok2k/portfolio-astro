@@ -38,8 +38,14 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.hugoavila.dev/")
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogurl} />
+    <script is:inline>
+      if (location.hash) {
+        window.__pendingHash = location.hash
+        history.replaceState(null, '', location.pathname + location.search)
+      }
+    </script>
   </head>
-  <body class="flex flex-col justify-center items-center w-full antialiased scroll-smooth">
+  <body class="flex flex-col justify-center items-center w-full antialiased">
     <div
       class="pointer-events-none fixed inset-0 -z-10 opacity-[0.06]"
       style="background-image: repeating-linear-gradient(0deg, var(--color-text-base) 0px, var(--color-text-base) 1px, transparent 1px, transparent 3px); mask-image: linear-gradient(to bottom, transparent, black 96px); -webkit-mask-image: linear-gradient(to bottom, transparent, black 96px);"
@@ -49,5 +55,16 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.hugoavila.dev/")
     <Navbar />
     <slot />
     <Footer />
+    <script is:inline>
+      window.addEventListener('load', () => {
+        const hash = window.__pendingHash
+        if (hash) {
+          const el = document.querySelector(hash)
+          if (el) el.scrollIntoView()
+          history.replaceState(null, '', hash)
+        }
+        document.documentElement.classList.add('scroll-smooth')
+      })
+    </script>
   </body>
 </html>
