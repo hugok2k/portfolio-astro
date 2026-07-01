@@ -1,147 +1,103 @@
 ---
 export interface Props {
-	title: string
-	description: string
-	github: string
-	deploy: string
-	image: string
-	tools: string[]
+  title: string
+  description: string
+  github: string
+  deploy: string
+  image: string
+  tools: string[]
+  number: number
 }
 
-const { title, description, github, deploy, image, tools } = Astro.props
+const { title, description, github, deploy, image, tools, number } = Astro.props
 
 import { toolsMap } from "../utils/ToolsIcons"
 import Github from "./svg/github.astro"
 import LinkEx from "./svg/link.astro"
+
+const slug = title
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/(^-|-$)/g, "")
+
+const ctaClass =
+  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
 ---
 
-<article class="flex flex-col justify-start items-center w-full max-w-112.5 h-auto box-border">
-  <header class="relative w-full h-56 overflow-hidden group flex justify-center items-center rounded-xl" >
-    <div class="absolute inset-0 bg-black/30 rounded-xl pointer-events-none z-0"></div>
-    <img class="rounded-xl transition-transform duration-300 group-hover:scale-105 z-10 w-full h-auto max-h-56 object-cover" src={image} alt={title} loading="lazy" />
-    <a class="flex items-center justify-center absolute top-0 w-full h-full bg-black/70 fill-white opacity-0 transition duration-300 group-hover:opacity-100 z-20" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
-      <span class="textDeploy text-white font-semibold uppercase">Ver proyecto</span>
-      <LinkEx height="22" width="22" />
-    </a>
-  </header>
-  <a class="text-left font-semibold text-tertiary pt-4 px-6 hover:text-primary w-full transition-colors" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="Link hacia la demo">
-    {title}
+<article class="relative flex flex-col w-full h-full border border-(--color-text-base)/15 hover:border-primary/50 bg-(--color-bg) transition-colors duration-300">
+  <div class="flex items-center gap-2 px-4 py-2.5 border-b border-(--color-text-base)/15" aria-hidden="true">
+    <span class="flex gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-(--color-text-base)/15"></span>
+      <span class="w-2 h-2 rounded-full bg-(--color-text-base)/15"></span>
+      <span class="w-2 h-2 rounded-full bg-primary/50"></span>
+    </span>
+    <span class="flex-1 text-center font-mono text-[11px] text-(--color-text-base)/35 truncate px-2">~/proyectos/{slug}</span>
+    <span class="font-mono text-[11px] text-primary shrink-0">P_{number.toString().padStart(2, "0")}</span>
+  </div>
+
+  <a
+    class="group relative w-full h-56 overflow-hidden flex justify-center items-center border-b border-(--color-text-base)/15"
+    href={deploy}
+    target="_blank"
+    rel="noreferrer noopener"
+    aria-label={`Ver proyecto ${title}`}
+  >
+    <img
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      src={image}
+      alt={title}
+      loading="lazy"
+    />
+    <span class="absolute inset-0 flex items-center justify-center gap-2 bg-(--color-bg)/95 fill-(--color-text-base) opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-mono text-xs md:text-sm uppercase tracking-widest">
+      <LinkEx height="16" width="16" />
+      ver proyecto
+    </span>
   </a>
-  <p class="w-full px-6 py-2 box-border h-32 text-(--color-text-base) text-sm md:text-base">
-    {description}
-  </p>
-  <footer class="flex flex-row justify-between items-center w-full px-6 py-4">
-    <section class="flex items-center gap-3 w-full box-border text-white">
+
+  <div class="flex flex-col flex-1 px-5 py-5">
+    <a
+      class="font-bold text-lg md:text-xl text-(--color-text-base) hover:text-primary transition-colors duration-200 mb-2 text-balance"
+      href={deploy}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      {title}
+    </a>
+    <p class="text-sm text-(--color-text-base)/70 leading-relaxed mb-5 line-clamp-3">
+      {description}
+    </p>
+
+    <ul class="flex flex-wrap gap-2 mb-5" aria-label="Tecnologías utilizadas">
       {
         tools.map((tool) => {
           const IconComponent = toolsMap[tool as keyof typeof toolsMap]
-          return IconComponent ? (
-            <div class="toolSvg tooltip">
-              <span class="tooltiptext">{tool}</span>
-              <IconComponent />
-            </div>
-          ) : null
+          return (
+            <li class="inline-flex items-center gap-1.5 font-mono text-[11px] px-2.5 py-1 border border-(--color-text-base)/20 text-(--color-text-base)/70">
+              {IconComponent && (
+                <span class="w-3 h-3 flex items-center justify-center shrink-0">
+                  <IconComponent />
+                </span>
+              )}
+              {tool}
+            </li>
+          )
         })
       }
-    </section>
-    <section class="flex justify-end items-center gap-3 w-full box-border">
-      <a class="svglink" href={deploy} target="_blank" rel="noreferrer noopener" aria-label="link al sitio desplegado">
-        <LinkEx height="26" width="26" />
+    </ul>
+
+    <div class="flex flex-wrap gap-3 mt-auto pt-5 border-t border-(--color-text-base)/15">
+      <a class={ctaClass} href={deploy} target="_blank" rel="noreferrer noopener" aria-label={`Link hacia la demo de ${title}`}>
+        <LinkEx height="14" width="14" />
+        ver proyecto
       </a>
       {
         github !== "" && (
-          <a class="svglink" href={github} target="_blank" rel="noreferrer noopener" aria-label="link a github">
-            <Github height="24" width="24" />
+          <a class={ctaClass} href={github} target="_blank" rel="noreferrer noopener" aria-label={`Link a github de ${title}`}>
+            <Github height="14" width="14" />
+            repositorio
           </a>
         )
       }
-    </section>
-  </footer>
+    </div>
+  </div>
 </article>
-
-<style>
-  .svglinkContainer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    padding: 0px 24px;
-    padding-bottom: 20px;
-    box-sizing: border-box;
-  }
-  .svglink {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    fill: var(--color-text-base);
-    transition: 0.3s;
-  }
-  .svglink:hover {
-    fill: var(--color-primary);
-  }
-  .svglinkCodepen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    stroke: var(--color-svg);
-    transition: 0.3s;
-  }
-  .svglinkCodepen:hover {
-    stroke: var(--color-primary);
-  }
-  .textDeploy {
-    padding-right: 10px;
-    text-decoration: none;
-    color: #fff;
-  }
-  .toolSvg {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 29px;
-    position: relative;
-  }
-
-  .tooltip::after {
-    content: '';
-    position: absolute;
-    visibility: hidden;
-    top: -6px;
-    left: 45%;
-    margin-left: -5px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: var(--color-primary) transparent transparent transparent;
-    transition: all 0.3s;
-    opacity: 0;
-  }
-
-  .tooltip .tooltiptext {
-    position: absolute;
-    visibility: hidden;
-    width: 84px;
-    background-color: var(--color-primary);
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    bottom: 34px;
-    left: -30px;
-    opacity: 0;
-    transition: all 0.3s;
-    font-size: 12px;
-  }
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
-  .tooltip:hover::after {
-    visibility: visible;
-    opacity: 1;
-  }
-</style>
