@@ -4,19 +4,12 @@ import Card from "./Card.astro"
 import Button from "./ui/Button.astro"
 ---
 
-<section class="relative flex flex-col justify-center items-center w-full px-4 mt-20 md:mt-0 pb-20 md:pb-32 overflow-hidden">
-  <div
-    class="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
-    style="background-image: repeating-linear-gradient(0deg, var(--color-text-base) 0px, var(--color-text-base) 1px, transparent 1px, transparent 3px); mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);"
-    aria-hidden="true"
-  >
-  </div>
-
+<section class="flex flex-col justify-center items-center w-full px-4 mt-20 md:mt-0 pb-20 md:pb-32">
   <h2
     class="text-3xl md:text-6xl font-bold pt-4 max-w-5xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40"
     id="project"
   >
-    Transformando ideas en soluciones digitales robustas y seguras.
+    <span class="text-primary">Transformando</span> ideas en soluciones digitales <span class="text-primary">robustas y seguras</span>.
   </h2>
   <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center">
     <span class="opacity-50">$</span> proyectos --list --total={data.length}

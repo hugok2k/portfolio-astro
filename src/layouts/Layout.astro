@@ -40,6 +40,12 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.hugoavila.dev/")
     <meta name="twitter:image" content={ogurl} />
   </head>
   <body class="flex flex-col justify-center items-center w-full antialiased scroll-smooth">
+    <div
+      class="pointer-events-none fixed inset-0 -z-10 opacity-[0.06]"
+      style="background-image: repeating-linear-gradient(0deg, var(--color-text-base) 0px, var(--color-text-base) 1px, transparent 1px, transparent 3px); mask-image: linear-gradient(to bottom, transparent, black 96px); -webkit-mask-image: linear-gradient(to bottom, transparent, black 96px);"
+      aria-hidden="true"
+    >
+    </div>
     <Navbar />
     <slot />
     <Footer />
