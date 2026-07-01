@@ -33,9 +33,9 @@ import Moon from "./svg/moon.astro"
     </button>
 
     <!-- Desktop menu (visible >850px) -->
-    <div class="flex left-auto top-auto w-[780px] h-auto p-0 flex-row justify-end items-center gap-5 text-base bg-transparent max-[850px]:hidden">
+    <div class="flex left-auto top-auto w-195 h-auto p-0 flex-row justify-end items-center gap-5 text-base bg-transparent max-[850px]:hidden">
       <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#project">.proyectos<span class="colorBra"> ()</span></a>
-      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#skills">.habilidades<span class="colorBra"> ()</span></a>
+      <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#talks">.charlas<span class="colorBra"> ()</span></a>
       <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#about">.sobre mí<span class="colorBra"> ()</span></a>
       <a class="text-lg font-normal transition-colors duration-300 hover:text-primary px-0 py-0 bg-transparent" href="/#contact">.contacto<span class="colorBra"> ()</span></a>
       <button
@@ -50,10 +50,10 @@ import Moon from "./svg/moon.astro"
   <!-- Mobile menu (visible <=850px) -->
   <div
     id="menu-mobile"
-    class="hidden max-[850px]:flex max-[850px]:fixed max-[850px]:left-full max-[850px]:top-[55px] max-[850px]:w-full max-[850px]:h-[calc(100%-63px)] max-[850px]:p-[60px] max-[850px]:flex-col max-[850px]:justify-center max-[850px]:items-center max-[850px]:gap-0 max-[850px]:text-2xl max-[850px]:bg-(--color-bg) max-[850px]:z-50 min-h-screen"
+    class="hidden max-[850px]:flex max-[850px]:fixed max-[850px]:left-full max-[850px]:top-13.75 max-[850px]:w-full max-[850px]:h-[calc(100%-63px)] max-[850px]:p-151 max- max-[850px]:flex-col max-[850px]:justify-center max-[850px]:items-center max-[850px]:gap-0 max-[850px]:text-2xl max-[850px]:bg-(--color-bg) max-[850px]:z-50 min-h-screen"
   >
     <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#project" id="linkProject">.proyectos<span class="colorBra"> ()</span></a>
-    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#skills" id="linkSkills">.habilidades<span class="colorBra"> ()</span></a>
+    <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#talks" id="linkTalks">.charlas<span class="colorBra"> ()</span></a>
     <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#about" id="linkAbout">.sobre mí<span class="colorBra"> ()</span></a>
     <a class="text-lg font-normal transition-colors hover:text-primary px-0 py-0 max-[850px]:px-4 max-[850px]:py-4 bg-transparent" href="/#contact" id="linkContact">.contacto<span class="colorBra"> ()</span></a>
     <button
@@ -89,15 +89,15 @@ import Moon from "./svg/moon.astro"
   const navToggle = document.querySelector('.navToggle')
   const navMenu = document.querySelector('#menu-mobile')
   const linkAbout = document.querySelector('#linkAbout')
-  const linkSkills = document.querySelector('#linkSkills')
   const linkProject = document.querySelector('#linkProject')
+  const linkTalks = document.querySelector('#linkTalks')
   const linkContact = document.querySelector('#linkContact')
   if (
     navToggle === null ||
     navMenu === null ||
     linkAbout === null ||
-    linkSkills === null ||
     linkProject === null ||
+    linkTalks === null ||
     linkContact === null
   ) {
     throw new Error('No se encontró el botón de menú o el menú')
@@ -120,7 +120,7 @@ import Moon from "./svg/moon.astro"
 
   linkAbout.addEventListener('click', closeMobile)
   linkProject.addEventListener('click', closeMobile)
-  linkSkills.addEventListener('click', closeMobile)
+  linkTalks.addEventListener('click', closeMobile)
   linkContact.addEventListener('click', closeMobile)
 
   const usermodeBtns = document.querySelectorAll('.usermode')

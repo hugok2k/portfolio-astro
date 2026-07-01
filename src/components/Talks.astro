@@ -1,0 +1,37 @@
+---
+import { talks } from "../utils/talks"
+import TalkItem from "./TalkItem.astro"
+
+const numbered = talks.map((talk, i) => ({ ...talk, number: talks.length - i }))
+const latestTalks = numbered.slice(0, 4)
+---
+
+<section class="relative flex flex-col justify-center items-center w-full my-40 md:my-56 overflow-hidden">
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 opacity-[0.06]"
+    style="background-image: repeating-linear-gradient(0deg, var(--color-text-base) 0px, var(--color-text-base) 1px, transparent 1px, transparent 3px); mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="flex flex-col justify-center items-center w-full px-4 max-w-5xl">
+    <h2
+      class="text-3xl md:text-6xl font-bold mb-6 max-w-3xl text-balance text-center text-(--color-text-base) scroll-mt-20 md:scroll-mt-40"
+      id="talks"
+    >
+      Del laboratorio al escenario.
+    </h2>
+    <h3 class="font-mono text-sm md:text-lg mb-2 text-primary text-balance text-center">
+      <span class="opacity-50">$</span> charlas --last=4 --topic=&quot;ia + pentesting&quot;
+    </h3>
+    {
+      talks.length > 4 && (
+        <p class="font-mono text-xs text-(--color-text-base)/50 mb-6">// mostrando las últimas 4 charlas</p>
+      )
+    }
+
+    <ol class={`relative w-full max-w-2xl ${talks.length > 4 ? "mt-8" : "mt-16"}`}>
+      {latestTalks.map((talk, i) => <TalkItem {...talk} isLast={i === latestTalks.length - 1} />)}
+    </ol>
+  </div>
+</section>

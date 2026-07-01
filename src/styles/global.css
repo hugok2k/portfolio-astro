@@ -4,6 +4,7 @@
   --color-primary: #db2979;
   --color-secondary: #ededed;
   --color-tertiary: #ff6dae;
+  --font-mono: "Roboto Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 [data-theme="light"] {

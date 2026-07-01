@@ -1,0 +1,78 @@
+---
+export interface Props {
+  title: string
+  event: string
+  date: string
+  description: string
+  tags: string[]
+  github: string
+  linkedin: string
+  number: number
+  isLast: boolean
+}
+
+const { title, event, date, description, tags, github, linkedin, number, isLast } = Astro.props
+
+import Github from "./svg/github.astro"
+import LinkedIn from "./svg/linkedin.astro"
+
+const ctaClass =
+  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
+---
+
+<li class="relative pl-9 md:pl-12">
+  {
+    !isLast && (
+      <span
+        class="absolute left-1.5 md:left-2 top-6 bottom-0 w-px bg-linear-to-b from-primary/50 via-primary/20 to-transparent"
+        aria-hidden="true"
+      />
+    )
+  }
+  <span
+    class="absolute left-0 top-1.5 block w-3.5 h-3.5 md:w-4 md:h-4 rotate-45 border-2 border-primary bg-(--color-bg)"
+    aria-hidden="true"
+  ></span>
+
+  <div class="pb-14 md:pb-16">
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2 font-mono">
+      <span class="text-primary text-xs md:text-sm">LOG_{number.toString().padStart(2, "0")}</span>
+      <span class="text-(--color-text-base)/30 text-xs md:text-sm">·</span>
+      <span class="text-(--color-text-base)/60 text-xs md:text-sm uppercase tracking-wider">{date}</span>
+    </div>
+
+    <h4 class="text-xl md:text-3xl font-bold text-(--color-text-base) mb-1.5 text-balance leading-tight">
+      {title}
+    </h4>
+    <p class="text-sm md:text-base text-primary mb-4">{event}</p>
+
+    <p class="text-sm md:text-base text-(--color-text-base)/85 max-w-xl mb-5 leading-relaxed">
+      {description}
+    </p>
+
+    <ul class="flex flex-wrap gap-2 mb-6" aria-label="Tecnologías de la charla">
+      {
+        tags.map((tag) => (
+          <li class="font-mono text-[11px] md:text-xs px-2.5 py-1 border border-(--color-text-base)/20 text-(--color-text-base)/70">
+            {tag}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex flex-wrap gap-3">
+      {
+        github !== "" && (
+          <a class={ctaClass} href={github} target="_blank" rel="noreferrer noopener" aria-label={`Ver repositorio de la charla ${title}`}>
+            <Github height="14" width="14" />
+            repositorio
+          </a>
+        )
+      }
+      <a class={ctaClass} href={linkedin} target="_blank" rel="noreferrer noopener" aria-label={`Ver post de LinkedIn sobre la charla ${title}`}>
+        <LinkedIn height="14" width="14" />
+        ver en linkedin
+      </a>
+    </div>
+  </div>
+</li>
