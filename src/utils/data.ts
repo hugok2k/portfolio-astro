@@ -5,7 +5,7 @@ export const data = [
 		description:
 			"Migración a arquitectura headless con Next.js basada en el diseño de TintaSur. Un rediseño de infraestructura que incluyó el paso a un VPS optimizado, securización integral y transferencia de dominio para garantizar estabilidad.",
 		image: "/images/feminacida.webp",
-		tools: ["NextJS", "Tailwind", "WordPress","VPS"],
+		tools: ["NextJS", "Tailwind", "WordPress", "VPS"],
 		deploy: "https://feminacida.com.ar/",
 	},
 	{

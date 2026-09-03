@@ -1,15 +1,15 @@
 ---
 export interface Props {
-  title: string
-  event: string
-  date: string
-  description: string
-  tags: string[]
-  github: string
-  linkedin: string
-  number: number
-  isLast: boolean
-  index: number
+	title: string
+	event: string
+	date: string
+	description: string
+	tags: string[]
+	github: string
+	linkedin: string
+	number: number
+	isLast: boolean
+	index: number
 }
 
 const { title, event, date, description, tags, github, linkedin, number, isLast, index } = Astro.props
@@ -18,7 +18,7 @@ import Github from "./svg/github.astro"
 import LinkedIn from "./svg/linkedin.astro"
 
 const ctaClass =
-  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
+	"inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
 ---
 
 <li class="relative pl-9 md:pl-12" data-reveal style={`transition-delay: ${index * 100}ms`}>
