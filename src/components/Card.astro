@@ -1,12 +1,12 @@
 ---
 export interface Props {
-  title: string
-  description: string
-  github: string
-  deploy: string
-  image: string
-  tools: string[]
-  number: number
+	title: string
+	description: string
+	github: string
+	deploy: string
+	image: string
+	tools: string[]
+	number: number
 }
 
 const { title, description, github, deploy, image, tools, number } = Astro.props
@@ -16,12 +16,12 @@ import Github from "./svg/github.astro"
 import LinkEx from "./svg/link.astro"
 
 const slug = title
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, "-")
-  .replace(/(^-|-$)/g, "")
+	.toLowerCase()
+	.replace(/[^a-z0-9]+/g, "-")
+	.replace(/(^-|-$)/g, "")
 
 const ctaClass =
-  "inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
+	"inline-flex items-center gap-2 font-mono text-xs md:text-sm px-3 py-1.5 border border-(--color-text-base)/25 text-(--color-text-base) fill-(--color-text-base) hover:border-primary hover:text-primary hover:fill-primary transition-colors duration-200"
 ---
 
 <article class="relative flex flex-col w-full h-full border border-(--color-text-base)/15 hover:border-primary/50 bg-(--color-bg) transition-colors duration-300">

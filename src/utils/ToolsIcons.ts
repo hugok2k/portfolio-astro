@@ -8,8 +8,8 @@ import Node from "../components/svg/node.astro"
 import React from "../components/svg/react.astro"
 import Tailwind from "../components/svg/tailwind.astro"
 import Typescript from "../components/svg/typescript.astro"
-import WordPress from "../components/svg/wordpress.astro"
 import VPS from "../components/svg/vps.astro"
+import WordPress from "../components/svg/wordpress.astro"
 
 export const toolsMap = {
 	NextJS: Next,
@@ -23,5 +23,5 @@ export const toolsMap = {
 	HTML: Html5,
 	TypeScript: Typescript,
 	WordPress: WordPress,
-	VPS: VPS
+	VPS: VPS,
 } as const
