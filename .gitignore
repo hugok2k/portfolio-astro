@@ -111,7 +111,6 @@ dist
 .pnpm-debug.log
 
 .DS_STORE
-pnpm-workspace.yaml
 
 # Astro
 .astro/
