@@ -42,6 +42,12 @@ importers:
       '@biomejs/biome':
         specifier: 2.6.8
         version: 2.6.8
+      '@emnapi/core':
+        specifier: ^1.11.3
+        version: 1.11.3
+      '@emnapi/runtime':
+        specifier: ^1.11.3
+        version: 1.11.3
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
